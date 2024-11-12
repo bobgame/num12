@@ -1,0 +1,25 @@
+.color-green {
+  color: #008f2d;
+}
+
+.color-blue {
+  color: #0763bf;
+}
+
+.color-red {
+  color: #bd1515;
+}
+
+.color-grey {
+  color: #999;
+}
+
+.color-orange {
+  color: #ca600a;
+}
+
+@for $i from 1 through 10 {
+  .mb-#{$i} {
+    margin-bottom: #{$i}vh;
+  }
+}

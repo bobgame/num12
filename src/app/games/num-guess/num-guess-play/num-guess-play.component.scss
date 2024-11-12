@@ -1,0 +1,226 @@
+.num-guess-play-container {
+  .play-con-center {
+    $top: 47%;
+
+    .control-con {
+      position: absolute;
+      left: 0;
+      top: $top;
+      width: 92vw;
+      height: 11vh;
+      margin-top: calc(46vw + 2vh);
+      // background-color: aqua;
+
+      .btn {
+        width: 20vw;
+        height: 5vh;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-top: -2.5vh;
+        margin-left: -10vw;
+        border-width: 1px;
+        background: #fff;
+
+        i {
+          display: block;
+        }
+
+        &.btn-left {
+          transform: translate(-100%, 0);
+        }
+
+        &.btn-right {
+          transform: translate(100%, 0);
+        }
+
+        &.btn-up {
+          transform: translate(0, -60%);
+        }
+
+        &.btn-down {
+          transform: translate(0, 60%);
+        }
+      }
+    }
+
+    .score-con {
+      // top: $top;
+      position: relative;
+      top: 5%;
+      margin-top: 0;
+      width: 100%;
+      height: 8vh;
+      margin-bottom: 4vh;
+    }
+
+
+    .game-con-center {
+      position: relative;
+      width: 92%;
+      margin-left: 4%;
+      overflow: hidden;
+      top: 0;
+      margin-top: 0;
+      // margin-top: 20vh;
+      // border-radius: 4vh;
+      // border: 2px solid #ccc;
+
+      .result-con {
+        width: 100%;
+        height: 20vh;
+        border-radius: 2vh;
+        padding: 2vh;
+        border: 2px solid #ccc;
+
+        .result-list {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          width: 100%;
+          $itemWidth: 23%;
+
+          .result-item {
+            width: $itemWidth;
+            height: 8vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2vh;
+            border-radius: 1vh;
+            border: 1px solid #ccc;
+            text-align: center;
+
+            span {
+              font-size: 1.5vh;
+            }
+
+            .color-a {
+              color: #00923f;
+            }
+
+            .color-b {
+              color: #0049b6;
+            }
+          }
+
+          .result-empty {
+            width: $itemWidth;
+          }
+        }
+      }
+
+      .input-con {
+        width: 100%;
+        height: 10vh;
+        border-radius: 2vh;
+        padding: 1.5vh 0;
+        border: 2px solid #ccc;
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+        display: flex;
+        justify-content: space-between;
+
+        .show-con {
+          width: 55%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 2vh;
+          text-align: center;
+          border-right: 2px solid #ccc;
+
+          .show-num-list {
+            width: 80%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .show-num-item {
+              width: 24%;
+              height: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          }
+        }
+
+        .delete-con,
+        .submit-con {
+          width: 15%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+
+          &.is-disable {
+            opacity: 0.5;
+            cursor: default;
+          }
+
+          i {
+            font-size: 2vh;
+          }
+        }
+
+        .submit-con {
+          width: 25%;
+
+          i {
+            font-size: 3vh;
+          }
+        }
+
+      }
+
+      .num-con {
+        width: 100%;
+        height: 20vh;
+        // border-radius: 2vh;
+        // padding: 1vh 1vh 0 1vh;
+        // border: 2px solid #ccc;
+
+        .num-list {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: center;
+          overflow: hidden;
+
+          .num-item {
+            width: 18%;
+            height: 7vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2vh;
+            border-radius: 1vh;
+            border: 2px solid #aaa;
+            text-align: center;
+            cursor: pointer;
+
+            &.is-disable {
+              opacity: 0.5;
+              cursor: default;
+            }
+
+            &.is-not-in {
+              opacity: 0.2;
+              cursor: default;
+            }
+          }
+
+          .num-empty {
+            width: 18%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+@import 'src/app/app.theme.scss';
+
+.star-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f1f1f1;
+  padding: 4vw;
+  overflow-y: auto;
+  z-index: 1000;
+  font-size: 2.4vh;
+
+  h3,
+  h4 {
+    margin-bottom: 0;
+  }
+
+  .all-star-con {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 6vh;
+
+    .title {
+      text-transform: capitalize;
+    }
+
+    .star {
+      color: #dd6b0d;
+    }
+  }
+
+  .game-stars-con {
+    padding-top: 3vh;
+    font-size: 2vh;
+    height: 70vh;
+  }
+}
+
+:host-context(.is-web) {
+  .star-container {
+    width: calc(100vw - #{$webPadding} * 2);
+    height: calc(100vh - #{$webPadding} * 2);
+    left: $webPadding;
+    top: $webPadding;
+    border-radius: $borderRadiusLg;
+    padding: $webContainPadding;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.15);
+
+    .game-stars-con {
+      padding-top: 3vh;
+      font-size: 2vh;
+      height: calc(70vh - #{$webPadding} * 2);
+    }
+  }
+}

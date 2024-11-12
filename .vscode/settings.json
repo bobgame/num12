@@ -1,0 +1,11 @@
+{
+  // "editor.renderWhitespace": "none",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.tslint": "explicit"
+  },
+  "eslint.format.enable": true,
+  "cSpell.words": [
+    "Jian"
+  ],
+}

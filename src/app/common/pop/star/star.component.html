@@ -1,0 +1,23 @@
+<div class="star-container" tabindex="-1">
+  <h3 class="star-container-title text-center">{{ 'stars.allStarts' | translate }}</h3>
+  <div class="all-star-con">
+    <div class="title">{{ 'stars.total' | translate }}: </div>
+    <div class="star">
+      <i class="nwicon nwi-star-full"></i>
+      <span>{{ ' ' + g.gameData.allStar }}</span>
+    </div>
+  </div>
+  <div class="game-stars-con">
+    <h4 class="star-container-title text-center">{{ 'stars.gameStarts' | translate }}</h4>
+    <div class="all-star-con" *ngFor="let game of g.gameData.gameList">
+      <div class="title">{{ game.name | translate }}</div>
+      <div class="star">
+        <i class="nwicon nwi-star-full"></i>
+        <span>{{ ' ' + game.star }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="close-con text-center">
+    <button class="btn close-btn" (click)="close()">{{ 'common.close' | translate }}</button>
+  </div>
+</div>

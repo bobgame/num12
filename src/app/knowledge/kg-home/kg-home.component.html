@@ -1,0 +1,86 @@
+<div class="title">
+  <div>{{ 'k.introduce.title' | translate }}</div>
+</div>
+<div class="info-con" [ngSwitch]="languageService.currentLanguage">
+  <div *ngSwitchCase="'zh-hans'">
+    <p>
+      数字，作为人类文明发展历程中极为重要的元素，其历史犹如一部浩瀚的长卷，承载着无数智慧与文化的沉淀。</p>
+    <p>
+      在远古时期，人类就开始了对数量概念的探索。最初，人们可能只是用简单的实物来对应物品的数量，比如用小石子表示猎物的多少，或是用树枝记录天数。这种极为原始的计数方式，是数字概念的朦胧开端。随着生活需求的日益复杂，不同地区的人类逐渐发展出了各自独特的数字表示法。
+    </p>
+    <p>在中国，早在殷商时期的甲骨文里，就已经出现了数字的雏形。那时的数字写法较为简单直观，从一到十都有相应的符号表示，这些符号多是通过刻画线条的数量来体现数字的大小，比如 “一” 就是一横，“二”
+      是两横，以此类推。随着时间的推移，到了春秋战国时期，算筹计数法得到广泛应用。算筹是一根根长短相同的小棍子，通过纵横排列的不同组合方式来表示不同的数字，这种计数法在当时的商业贸易、天文历法计算以及工程建设等诸多领域都发挥了极为关键的作用，为中国古代数学的发展奠定了坚实基础。
+    </p>
+    <p>古埃及人创造了象形数字，他们用不同的图形符号来代表不同的数字。例如，一道竖线表示 “1”，一个马蹄形符号表示 “10”，而一个莲花图案则表示 “100”
+      等。这些象形数字生动形象，但在书写和运算复杂数量时显得较为繁琐。古巴比伦人则采用了楔形数字，以特定的楔形刻痕组合来表达数值，这种数字系统在当时的商业和天文计算等领域发挥了重要作用。</p>
+    <p>而在印度，数字得到了重大的发展突破。印度人发明了一套包括 0
+      在内的数字符号，这些数字简洁且具有很强的系统性，后来经过阿拉伯人的传播，被欧洲人所接受并广泛使用，最终成为了如今全球通用的阿拉伯数字。阿拉伯数字以其简洁明了、易于书写和运算的优势，彻底改变了世界的数学运算和记录方式。</p>
+    <p>除了上述常见的数字写法，罗马数字也曾在欧洲历史上占据重要地位。罗马数字采用字母组合的方式，如 “I” 表示 “1”，“V” 表示 “5”，“X” 表示 “10”，“L” 表示 “50”
+      等，通过特定的加减法规则来表示不同的数字。例如，“IV” 表示 “4”，“IX” 表示 “9” 等。罗马数字在建筑、钟表刻度等方面至今仍有应用，它独特的书写形式彰显着古老欧洲文化的韵味。</p>
+    <p>随着数字的不断发展和普及，基于数字的游戏也应运而生并蓬勃发展。数独游戏堪称数字游戏中的经典之作。在一个 9×9 的九宫格内，根据已知的数字，玩家需要运用逻辑推理和排除法，将 1 - 9
+      这九个数字填入每个小九宫格以及每行每列，且数字不能重复。数独游戏不仅考验玩家的耐心，更能极大地锻炼大脑的逻辑思维能力，无论是儿童还是成年人都能在其中找到乐趣和挑战。</p>
+    <p>
+      数字解谜游戏也是种类繁多。有些游戏会给出一系列数字序列，玩家需要找出其中的规律，从而推测出下一个数字或者缺失的数字。这种游戏能够激发玩家对数字规律的敏锐洞察力，培养数学直觉。还有数字接龙游戏，玩家需要按照特定的规则，比如相邻数字的差值或倍数关系，依次连接数字，这需要玩家对数字的顺序和关系有清晰的认识。
+    </p>
+    <p>
+      另外，像数字填色游戏，以数字为索引对应不同的颜色区域，玩家在填色过程中完成一幅幅精美的图案，这种游戏将数字与艺术创作相结合，别具一番趣味。在电子游戏领域，以数字为核心元素的角色扮演游戏中，玩家需要关注角色的各项数值属性，如生命值、魔法值、攻击力、防御力等数字指标，并通过升级、获取装备等方式来提升这些数字，从而在游戏世界中展开精彩的冒险旅程。
+    </p>
+    <p>从远古的简单计数到如今丰富多样的数字游戏，数字在人类文明的长河中不断演变和创新，既见证了人类智慧的发展，又为人们的生活带来了无尽的乐趣和挑战。</p>
+  </div>
+  <div *ngSwitchCase="'zh-hant'">
+    <p>
+      <b>數字</b>（numerical digit，digit）是一種用來表示數（number）的書寫符號：
+    </p>
+    <ul>
+      <li>不同的記數系統可以使用相同的數字，比如，十進製和二進製都會用到數字「0」和「1」。</li>
+      <li>
+        <p>同一個數在不同的記數系統中有不同的表示，比如，數37（阿拉伯數字十進製）可以有多種寫法：</p>
+
+        <ul>
+          <li>中文數字寫作三十七、卅七</li>
+          <li>羅馬數字寫作XXXVII</li>
+          <li>阿拉伯數字二進製寫作100101</li>
+        </ul>
+      </li>
+    </ul>
+    <p>
+      若是進位製的記數系統，且基數為一整數，表示數所需要用到的數字個數等於基數的絕對值，例如十進製用到0到9等10個數字，而二進製用到0，1這二個數字。
+    </p>
+  </div>
+  <div *ngSwitchDefault="'en'">
+    <p>
+      A number is a mathematical object used to count, measure, and label. The original examples are the natural
+      numbers 1, 2, 3, 4, and so forth. Numbers can be represented in language with number words. More universally,
+      individual numbers can be represented by symbols, called numerals; for example, "5" is a numeral that
+      represents
+      the number five. As only a relatively small number of symbols can be memorized, basic numerals are commonly
+      organized in a numeral system, which is an organized way to represent any number. The most common numeral
+      system
+      is the Hindu–Arabic numeral system, which allows for the representation of any number using a combination of
+      ten
+      fundamental numeric symbols, called digits. In addition to their use in counting and measuring, numerals are
+      often
+      used for labels (as with telephone numbers), for ordering (as with serial numbers), and for codes (as with
+      ISBNs).
+      In common usage, a numeral is not clearly distinguished from the number that it represents.
+    </p>
+    <p>
+      Besides their practical uses, numbers have cultural significance throughout the world. For example, in Western
+      society, the number 13 is often regarded as unlucky, and "a million" may signify "a lot" rather than an exact
+      quantity. Though it is now regarded as pseudoscience, belief in a mystical significance of numbers, known as
+      numerology, permeated ancient and medieval thought. Numerology heavily influenced the development of Greek
+      mathematics, stimulating the investigation of many problems in number theory which are still of interest
+      today.
+    </p>
+    <p>
+      During the 19th century, mathematicians began to develop many different abstractions which share certain
+      properties of numbers, and may be seen as extending the concept. Among the first were the hypercomplex
+      numbers,
+      which consist of various extensions or modifications of the complex number system. In modern mathematics,
+      number
+      systems are considered important special examples of more general algebraic structures such as rings and
+      fields,
+      and the application of the term "number" is a matter of convention, without fundamental significance.
+    </p>
+  </div>
+</div>

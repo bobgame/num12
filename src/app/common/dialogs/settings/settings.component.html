@@ -1,0 +1,15 @@
+<div class="dialog-content-common" size="sm">
+  <h3>{{ 'settings.name' | translate }}</h3>
+  <div class="dialog-content">
+    <div class="dialog-list">
+      <div class="list-item">
+        <label for="settings-test">{{ 'settings.onlyGame' | translate }}</label>
+        <ng-toggle id="settings-test" (click)="setOnlyGame()" [value]="settings.onlyGame"></ng-toggle>
+      </div>
+    </div>
+  </div>
+  <div class="button-con">
+    <button (click)="save()">{{ 'common.save' | translate }}</button>
+    <button (click)="close()">{{ 'common.close' | translate }}</button>
+  </div>
+</div>

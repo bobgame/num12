@@ -1,0 +1,16 @@
+.dialog-list {
+  width: 100%;
+
+  .list-item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #ccc;
+    padding: 10px 0;
+
+    &:first-child {
+      border-top: none;
+    }
+  }
+}

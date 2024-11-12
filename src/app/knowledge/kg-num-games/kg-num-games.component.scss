@@ -1,0 +1,33 @@
+.game-list {
+  width: 100%;
+  padding-top: 10px;
+
+  li {
+    padding: 20px 10px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+
+    &:hover {
+      background: #f1f1f1;
+      font-weight: bold;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .name {
+      font-size: 16px;
+    }
+
+    .icon {
+      position: relative;
+
+      i {
+        display: block;
+      }
+    }
+  }
+}

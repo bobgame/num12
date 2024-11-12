@@ -1,0 +1,24 @@
+<div class="n-puzzle-play-container">
+  <nm-ui-header title="{{'gameName.nPuzzle' | translate}}" [backEnabled]="true" (back)="g.navigate()"></nm-ui-header>
+  <div class="play-con-center">
+    <div class="score-con">
+      <div class="steps">{{'common.leftSteps' | translate}}: <span>{{nPuzzleService.nPuzzleData.steps}}</span></div>
+      <div class="step-item star"><i class="nwicon nwi-star-full"></i>: <span>{{nPuzzleService.nPuzzleData.star}}</span>
+      </div>
+    </div>
+    <div class="game-con-center" #nPuzzlePlayGameConCenter [style.height.px]="nPuzzlePlayGameConCenter.offsetWidth">
+      <div class="num-con" #nPuzzlePlayNumCon [style.height.px]="nPuzzlePlayGameConCenter.clientWidth * 0.96"
+        [style.width.px]="nPuzzlePlayGameConCenter.clientWidth * 0.96">
+        <div class="num-item" *ngFor="let item of nPuzzleService.nPuzzleItems" [ngStyle]="{
+            'transform': 'translateX(' + item.x * nPuzzlePlayNumCon.clientWidth / nPuzzleService.nPuzzleData.maxX + 'px) translateY(' + item.y * nPuzzlePlayNumCon.clientWidth / nPuzzleService.nPuzzleData.maxY + 'px)',
+            'width': nPuzzlePlayNumCon.clientWidth / nPuzzleService.nPuzzleData.maxX + 'px',
+            'height': nPuzzlePlayNumCon.clientWidth / nPuzzleService.nPuzzleData.maxY + 'px',
+          }" [class.is-error]="nPuzzleService.checkIfError(item)" (click)="nPuzzleItemClicked(item)">
+          <div class="num num-{{item.num}}" [ngStyle]="{
+            'font-size': nPuzzlePlayNumCon.clientWidth / nPuzzleService.nPuzzleData.maxX / 3 + 'px',
+          }">{{item.num}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

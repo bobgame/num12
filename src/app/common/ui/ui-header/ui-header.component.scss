@@ -1,0 +1,46 @@
+.ui-header-container {
+  position: relative;
+  width: 100%;
+  height: 6vh;
+  font-size: 2.4vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .title-con {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  .back-con {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    width: 12%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 2%;
+    cursor: pointer;
+
+    i {
+      font-weight: bold;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .left-2 {
+      margin-left: 0.5px;
+    }
+  }
+
+  .right-con {
+    position: absolute;
+    z-index: 2;
+    right: 4%;
+    cursor: pointer;
+  }
+}

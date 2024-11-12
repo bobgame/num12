@@ -1,0 +1,93 @@
+@font-face {
+  font-family: "nwicon"; /* Project id 1043435 */
+  src: url("iconfont.woff2") format("woff2"),
+    url("iconfont.woff") format("woff"), url("iconfont.ttf") format("truetype");
+}
+
+.nwicon {
+  font-family: "nwicon" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.nwi-language-sharp:before {
+  content: "\e8a9";
+}
+
+.nwi-help:before {
+  content: "\e83d";
+}
+
+.nwi-settings:before {
+  content: "\e840";
+}
+
+.nwi-arrow-left:before {
+  content: "\e601";
+}
+
+.nwi-more:before {
+  content: "\e93d";
+}
+
+.nwi-pause:before {
+  content: "\e87a";
+}
+
+.nwi-continue:before {
+  content: "\e63b";
+}
+
+.nwi-new:before {
+  content: "\e621";
+}
+
+.nwi-rank:before {
+  content: "\e622";
+}
+
+.nwi-btn-page-1:before {
+  content: "\e623";
+}
+
+.nwi-btn-page-2:before {
+  content: "\e624";
+}
+
+.nwi-star-full:before {
+  content: "\e625";
+}
+
+.nwi-clear:before {
+  content: "\e626";
+}
+
+.nwi-small-no:before {
+  content: "\e627";
+}
+
+.nwi-star-empty:before {
+  content: "\e628";
+}
+
+.nwi-small-yes:before {
+  content: "\e629";
+}
+
+.nwi-btn-page-3:before {
+  content: "\e62a";
+}
+
+.nwi-backspace:before {
+  content: "\e620";
+}
+
+.nwi-yes:before {
+  content: "\e6db";
+}
+
+.nwi-mark:before {
+  content: "\e62f";
+}

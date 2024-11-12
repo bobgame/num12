@@ -1,0 +1,8 @@
+RewriteEngine On  
+# 如果请求的是现有资源，则按原样执行
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]  
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d  
+RewriteRule ^ - [L]
+ 
+# 如果请求的资源不存在，则使用index.html
+RewriteRule ^ /index.html

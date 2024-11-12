@@ -1,0 +1,16 @@
+<div class="dialog-content-common">
+  <h3>{{ 'dialog.lang.title' | translate }}</h3>
+  <div class="dialog-content">
+    <p>{{ 'dialog.lang.desc' | translate }}</p>
+    <div class="lang-list">
+      <button class="lang-item" [class.is-selected]="langItem.lang === currentLang.lang" *ngFor="let langItem of langs"
+        (click)="selectLanguage(langItem)">
+        {{ langItem.name }}
+      </button>
+    </div>
+  </div>
+  <div class="button-con">
+    <button (click)="applyLanguage()">{{ 'common.apply' | translate }}</button>
+    <button (click)="close()">{{ 'common.cancel' | translate }}</button>
+  </div>
+</div>

@@ -1,0 +1,121 @@
+{
+  "common": {
+    "title": "数字之家",
+    "ok": "确认",
+    "back": "返回",
+    "save": "保存",
+    "cancel": "取消",
+    "close": "关闭",
+    "apply": "应用",
+    "home": "首页",
+    "play": "开始游戏",
+    "newGame": "新游戏",
+    "menu": "菜单",
+    "continue": "继续",
+    "pause": "暂停",
+    "settings": "设置",
+    "stars": "星星",
+    "help": "帮助",
+    "gameMenu": "游戏菜单",
+    "hardChoose": "难度选择",
+    "leftSteps": "余次",
+    "score": "分数",
+    "times": "次数",
+    "moreComing": "更多游戏，即将到来",
+    "aboutAndContact": "关于",
+    "gameOver": "游戏结束",
+    "continueOrMenu": "继续游戏 或 返回菜单？",
+    "got": "获得",
+    "starter": "新手",
+    "normal": "普通",
+    "master": "大师"
+  },
+  "gameName": {
+    "slider": "滑动吧数字",
+    "nPuzzle": "数字华容道",
+    "n2048": "2048",
+    "numGuess": "猜数字",
+    "sudoku": "数独",
+    "numBattle": "数字大战"
+  },
+  "k": {
+    "title": "数字之家",
+    "nav": {
+      "introduce": "介绍",
+      "singleNum": "单个数字",
+      "numGames": "数字游戏"
+    },
+    "introduce": {
+      "title": "数字介绍",
+      "text": "数字12是一款集合了多种数字游戏的游戏，包括数独、猜数字、滑动吧数字、数字华容道、2048等。"
+    },
+    "singleNum": {
+      "title": "单个数字",
+      "text": "数字12是一款集合了多种数字游戏的游戏，包括数独、猜数字、滑动吧数字、数字华容道、2048等。"
+    },
+    "numGames": {
+      "title": "数字游戏",
+      "text": "数字12是一款集合了多种数字游戏的游戏，包括数独、猜数字、滑动吧数字、数字华容道、2048等。"
+    }
+  },
+  "gameOver": {
+    "gameOver": "游戏结束！",
+    "timesOver": "移动次数已用完！",
+    "winWin": "恭喜！赢了！"
+  },
+  "sudoku": {
+    "name": "数独",
+    "helpGoalTitle": "目标",
+    "helpGoalText": "用数字填充9×9网格，使每行、每列和每个3×3窗格部分包含1到9之间的数字。",
+    "helpPlayTitle": "游戏方式",
+    "helpPlayText": "新的游戏开始的时候，9×9网格中将有一些方格默认填充了数字。您可以利用这些数字之间的逻辑来填充缺失的数字并完成游戏。",
+    "helpLiTitle": "注意，以下都会出错:",
+    "helpLi1": "任意一行包含多个相同的数字。",
+    "helpLi2": "任何一列包含多个相同的数字。",
+    "helpLi3": "任何3×3窗格部分包含多个相同的数字。"
+  },
+  "guess": {
+    "name": "猜数字",
+    "helpText1": "以4字难度为例，你需要猜出4个数字。",
+    "helpText2": "游戏将会随机生成4个数字。",
+    "helpText3": "比如 5678，如果猜 0128，游戏将会提示 1A0B，如果猜 5627，游戏将会提示 2A1B。",
+    "helpText4": "每次游戏有8次机会。",
+    "helpText5": "用越少次数猜对将获得越高的星星。"
+  },
+  "slider": {
+    "name": "滑动吧数字",
+    "helpText1": "您可以用手指滑动来寻找三个以上连接在一起的彩色数字，将它们消除掉可以获得分数。"
+  },
+  "nPuzzle": {
+    "nameB": "数字华容道"
+  },
+  "2048": {
+    "nameB": "2048"
+  },
+  "stars": {
+    "name": "星星",
+    "allStarts": "所有星星",
+    "gameStarts": "游戏星星",
+    "allGet": "共获得",
+    "quantityAvailableStar": "可用星星"
+  },
+  "settings": {
+    "name": "设置",
+    "onlyGame": "只显示游戏。"
+  },
+  "more": {
+    "name": "更多",
+    "about": {
+      "title": "关于游戏",
+      "version": "版本号：",
+      "author": "作者: Bob Liu (Bob Game)",
+      "desc1": "这个是我自己练习写代码的作品，全免费，无付费内容，希望玩家喜欢玩。"
+    }
+  },
+  "dialog": {
+    "lang": {
+      "title": "语言",
+      "desc": "选择语言并应用。"
+    }
+  }
+}

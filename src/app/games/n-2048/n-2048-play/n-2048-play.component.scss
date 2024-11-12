@@ -1,0 +1,224 @@
+:host {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.n-2048-play-container {
+  .play-con-center {
+
+    .game-con-center {
+      position: absolute;
+      width: 92%;
+      height: 92vh;
+      overflow: hidden;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border: 8px solid #ccc;
+      border-radius: 1vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .num-bg-con {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        // left: 4px;
+        // top: 4px;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        background-color: #ccc;
+
+        .bg-item {
+          position: absolute;
+          left: 0;
+          top: 0;
+          box-sizing: border-box;
+          width: 18%;
+          height: 18%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .bg-item-inner {
+            width: 90%;
+            height: 90%;
+            background-color: rgba(255, 255, 255, 0.2);
+          }
+        }
+      }
+
+      .num-con {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        // left: 4px;
+        // top: 4px;
+        z-index: 2;
+
+        .num-item {
+          position: absolute;
+          left: 0;
+          top: 0;
+          box-sizing: border-box;
+          width: 18%;
+          height: 18%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &.has-animation {
+            transition: transform .1s ease-in-out;
+          }
+
+          .num {
+            width: 90%;
+            height: 90%;
+            font-size: 6vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            border: 2px solid rgba(0, 128, 0, 0.6);
+            color: green;
+          }
+
+          .num-2 {
+            background: rgb(213, 249, 255);
+            border: 2px solid rgb(18, 192, 224);
+            color: rgb(6, 158, 185);
+          }
+
+          .num-4 {
+            background: rgb(253, 255, 215);
+            border: 2px solid rgb(167, 176, 0);
+            color: rgb(142, 150, 0);
+          }
+
+          .num-8 {
+            background: rgb(232, 255, 218);
+            border: 2px solid rgb(108, 206, 46);
+            color: rgb(60, 144, 7);
+          }
+
+          .num-16 {
+            background: rgb(255, 228, 226);
+            border: 2px solid rgb(255, 133, 126);
+            color: rgb(187, 80, 74);
+          }
+
+          .num-32 {
+            background: rgb(209, 223, 255);
+            border: 2px solid rgb(58, 133, 255);
+            color: rgb(26, 94, 203);
+          }
+
+          .num-64 {
+            background: rgb(225, 220, 255);
+            border: 2px solid rgb(139, 118, 255);
+            color: rgb(72, 49, 204);
+          }
+
+          .num-128 {
+            background: rgb(255, 241, 216);
+            border: 2px solid rgb(238, 157, 4);
+            color: rgb(203, 137, 16);
+          }
+
+          .num-256 {
+            background: rgb(255, 224, 255);
+            border: 2px solid rgb(255, 99, 255);
+            color: rgb(198, 46, 198);
+          }
+
+          .num-512 {
+            background: rgb(238, 238, 238);
+            border: 2px solid rgb(159, 159, 159);
+            color: rgb(87, 87, 87);
+          }
+
+          .num-1024 {
+            background: rgb(216, 255, 249);
+            border: 2px solid rgb(0, 219, 186);
+            color: rgb(9, 173, 148);
+          }
+
+          .num-2048 {
+            background: rgb(255, 254, 223);
+            border: 2px solid rgb(205, 211, 0);
+            color: rgb(161, 166, 4);
+          }
+
+          .num-4096 {
+            background: rgb(225, 255, 220);
+            border: 2px solid rgb(56, 234, 19);
+            color: rgb(46, 183, 19);
+          }
+
+          .num-8192 {
+            background: rgb(190, 245, 255);
+            border: 2px solid rgb(18, 192, 224);
+            color: rgb(21, 161, 186);
+          }
+
+          .num-16384 {
+            background: rgb(251, 255, 179);
+            border: 2px solid rgb(167, 176, 0);
+            color: rgb(167, 176, 0);
+          }
+
+          .num-32768 {
+            background: rgb(227, 255, 210);
+            border: 2px solid rgb(108, 206, 46);
+            color: rgb(92, 183, 35);
+          }
+
+          .num-65536 {
+            background: rgb(255, 225, 223);
+            border: 2px solid rgb(255, 133, 126);
+            color: rgb(168, 41, 34);
+          }
+
+          .num-131072 {
+            background: rgb(192, 216, 255);
+            border: 2px solid rgb(58, 133, 255);
+            color: rgb(21, 86, 190);
+          }
+
+          .num-262144 {
+            background: rgb(214, 206, 255);
+            border: 2px solid rgb(139, 118, 255);
+            color: rgb(47, 24, 178);
+          }
+
+          .num-524288 {
+            background: rgb(255, 240, 212);
+            border: 2px solid rgb(238, 157, 4);
+            color: rgb(190, 132, 24);
+          }
+
+          .num-1048576 {
+            background: rgb(255, 209, 255);
+            border: 2px solid rgb(255, 99, 255);
+            color: rgb(177, 24, 177);
+          }
+
+          &.is-error {
+            .num {
+              border: 2px solid rgba(255, 0, 0, 0.3);
+              color: red;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
