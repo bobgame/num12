@@ -2,6 +2,7 @@ import { AfterViewInit, Component, OnInit } from '@angular/core'
 import { GlobalService } from './common/services/global.service'
 import { LanguageService } from './common/services/language.service'
 import { TranslateService } from '@ngx-translate/core'
+import { PageName } from './common/enums/base.enum'
 
 @Component({
   selector: 'nm-root',
@@ -17,7 +18,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     // this.translate.use('en')
     console.log('AppComponent constructor')
   }
-
+  PageName = PageName
   environment = this.g.environment
 
   isHP = false

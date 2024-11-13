@@ -1,6 +1,6 @@
 import { Component } from '@angular/core'
-import { GlobalService } from '../common/services/global.service'
-import { PageName } from '../common/enums/base.enum'
+import { GlobalService } from '../../common/services/global.service'
+import { PageName } from '../../common/enums/base.enum'
 import { CommonModule } from '@angular/common'
 import { TranslateModule } from '@ngx-translate/core'
 

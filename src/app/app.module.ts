@@ -17,6 +17,13 @@ import { HttpClient, HttpClientModule } from '@angular/common/http'
 import { NgToggleModule } from 'ng-toggle-button'
 import { ngToggleConfig } from './app.config'
 import { LocationStrategy, HashLocationStrategy } from '@angular/common'
+import { N2048Component } from './games/n-2048/n-2048.component'
+import { NPuzzleComponent } from './games/n-puzzle/n-puzzle.component'
+import { NumGuessComponent } from './games/num-guess/num-guess.component'
+import { SliderComponent } from './games/slider/slider.component'
+import { SudokuComponent } from './games/sudoku/sudoku.component'
+import { HomeComponent } from './games/home/home.page'
+import { AboutComponent } from './pages/about/about.component'
 
 @Injectable()
 export class MyHammerConfig extends HammerGestureConfig {
@@ -52,6 +59,13 @@ export class MyHammerConfig extends HammerGestureConfig {
       closeButton: true,
     }),
     KnowledgeComponent,
+    SliderComponent,
+    NPuzzleComponent,
+    N2048Component,
+    NumGuessComponent,
+    SudokuComponent,
+    AboutComponent,
+    HomeComponent,
   ],
   exports: [NgCircleProgressModule,
   ],

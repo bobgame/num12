@@ -18,6 +18,7 @@ export interface GameData {
 }
 
 export interface GameShow {
+  pageName: PageName,
   isHP: boolean,
   onlyWeb: boolean,
   pop: {

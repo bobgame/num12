@@ -8,6 +8,10 @@ export enum GameName {
   numBattle = 'gameName.numBattle',
 }
 
+export enum RouteName {
+  dashboard = 'dashboard',
+}
+
 export enum PageName {
   slider = 'slider',
   nPuzzle = 'nPuzzle',

@@ -1,11 +1,34 @@
 <div id="nw-app-container" [class.is-web]="isWeb">
   <div class="knowledge-container" *ngIf="isWeb">
-    <nm-knowledge></nm-knowledge>
+    <router-outlet></router-outlet>
   </div>
   <div>
     <div class="app-container" *ngIf="!g.show.onlyWeb">
-      <router-outlet></router-outlet>
+      @switch (g.show.pageName) {
+      @case (PageName.home) {
+      <nm-home></nm-home>
+      }
+      @case (PageName.about) {
+      <nm-about></nm-about>
+      }
+      @case (PageName.slider) {
+      <nm-slider></nm-slider>
+      }
+      @case (PageName.nPuzzle) {
+      <nm-n-puzzle></nm-n-puzzle>
+      }
+      @case (PageName.n2048) {
+      <nm-n-2048></nm-n-2048>
+      }
+      @case (PageName.numGuess) {
+      <nm-num-guess></nm-num-guess>
+      }
+      @case (PageName.sudoku) {
+      <nm-sudoku></nm-sudoku>
+      }
+      }
     </div>
   </div>
+
   <nm-star *ngIf="g.show.pop.star"></nm-star>
 </div>

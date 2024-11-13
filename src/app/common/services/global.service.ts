@@ -52,6 +52,7 @@ export class GlobalService {
   ]
 
   show: GameShow = {
+    pageName: PageName.home,
     isHP: false,
     onlyWeb: false,
     pop: {
@@ -62,12 +63,12 @@ export class GlobalService {
   getSetting = (id: SettingsEnum): any => this.settings.find(s => s.id === id) || {id: 0, value: ''}
 
   navigate(page: PageName = PageName.home) {
-    this.router.navigate([page])
+    this.show.pageName = page
+    // this.router.navigate([page])
   }
 
   goBack() {
-    console.log('goBack')
-    window.history.back()
+    this.show.pageName = PageName.home
   }
 
   instant(key: string, interpolateParams?: object | undefined) {
