@@ -21,20 +21,85 @@
 
   .game-list {
     ul {
+      display: flex;
+      justify-content: start;
+      flex-wrap: wrap;
+
       li {
-        height: 5vh;
-        line-height: 5vh;
-        margin-bottom: 1vh;
-        font-size: 2.5vh;
-        text-decoration: underline;
-        color: #d64f0c;
+        height: 7vh;
+        border-bottom: 1px solid #ccc;
         cursor: pointer;
+        display: flex;
+        // justify-content: space-between;
+        align-items: center;
+        padding: 0 2%;
+        width: 45%;
+
+        .icon {
+          width: 4vh;
+          height: 4vh;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .name {
+          font-size: 1.8vh;
+          // text-decoration: underline;
+          color: #d64f0c;
+          width: 100%;
+          padding-left: 2vh;
+          text-align: left;
+        }
+
+        .star {
+          // width: 10vh;
+          color: #d64f0c;
+          font-size: 1.4vh;
+          padding-left: 2vh;
+          text-align: left;
+
+          i {
+            font-size: 1.4vh;
+          }
+        }
       }
 
       .more-coming {
         text-decoration: none;
         color: gray;
         opacity: .7;
+        justify-content: center;
+      }
+
+      .bottom-con {
+        padding: 0 30%;
+
+        .bottom-item {
+          height: 40px;
+          width: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          transition: all .3s;
+
+          i {
+            font-size: 20px;
+            color: #666;
+          }
+
+          &:hover,
+          &.is-active {
+            background: rgba(0, 0, 0, .05);
+
+            i {
+              color: #2a82e4;
+            }
+          }
+        }
       }
     }
   }

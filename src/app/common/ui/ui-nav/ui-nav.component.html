@@ -1,0 +1,26 @@
+<div class="left-nav-container">
+  <div class="title-con">
+    <div class="title">{{ "k.title" | translate }}</div>
+  </div>
+  <div class="nav-con">
+    <div class="nav-list">
+      <div
+        class="nav-item"
+        [class.is-active]="currentNav.nav === navItem.nav"
+        *ngFor="let navItem of navItems"
+        (click)="switchNav(navItem)"
+      >
+        {{ navItem.name | translate }}
+      </div>
+    </div>
+  </div>
+  <div class="bottom-con">
+    <div
+      class="bottom-item"
+      *ngFor="let bottomIcon of dialogService.bottomIcons"
+      (click)="dialogService.openDialog(bottomIcon.popup)"
+    >
+      <i class="nwicon nwi-{{ bottomIcon.nwIcon }}"></i>
+    </div>
+  </div>
+</div>

@@ -10,6 +10,10 @@ export enum GameName {
 
 export enum RouteName {
   dashboard = 'dashboard',
+  introduce = 'introduce',
+  history = 'history',
+  world = 'world',
+  games = 'games',
 }
 
 export enum PageName {

@@ -1,185 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Number games | 数字游戏大全</title>
 
-<head>
-  <meta charset="utf-8" />
-  <title>Number games | 数字游戏大全</title>
+    <base href="./" />
 
-  <base href="./" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="viewport"
+      content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
 
-  <meta name="color-scheme" content="light dark" />
-  <meta name="viewport"
-    content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="format-detection" content="telephone=no" />
-  <meta name="msapplication-tap-highlight" content="no" />
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="This site is a site about number games. Many number in one website, such as 2048, sudoku, n-puzzle, number, numbers, digital, so many number games in one web site. 这个网站试一个数字游戏相关的网站，持续不断的复刻数字游戏和文字游戏，希望大家喜欢"
+    />
+    <meta
+      name="keywords"
+      content="number, numbers, bobgame, sanguo, quick game, letter game, games, all-in-one, digital, 2048, sudoku, n-puzzle, 数字, 游戏, 大全, 数字华容道, 文字, 文字游戏"
+    />
+    <meta name="author" content="bobgame@vip.qq.com" />
 
-  <!-- SEO -->
-  <meta name="description"
-    content="This site is a site about number games. Many number in one website, such as 2048, sudoku, n-puzzle, number, numbers, digital, so many number games in one web site. 这个网站试一个数字游戏相关的网站，持续不断的复刻数字游戏和文字游戏，希望大家喜欢" />
-  <meta name="keywords"
-    content="number, numbers, bobgame, sanguo, quick game, letter game, games, all-in-one, digital, 2048, sudoku, n-puzzle, 数字, 游戏, 大全, 数字华容道, 文字, 文字游戏" />
-  <meta name="author" content="bobgame@vip.qq.com" />
+    <link rel="icon" type="image/png" href="assets/icon/favicon.png" />
 
+    <!-- add to homescreen for ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes" />
+  </head>
 
-  <link rel="icon" type="image/png" href="assets/icon/favicon.png" />
-
-  <!-- add to homescreen for ios -->
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-</head>
-
-<body>
-  <nm-root></nm-root>
-  <!-- loading-con-start -->
-  <div class="start-loading-container" id="start-loading-container">
-    <div class="loading-con-start">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+  <body>
+    <nm-root></nm-root>
+    <!-- loading-con-start -->
+    <div class="start-loading-container" id="start-loading-container">
+      <div class="loading-con-start">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
-  </div>
 
-  <style>
-    .start-loading-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 999999;
-      width: 100vw;
-      height: 100vh;
-      background-color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .loading-con-start,
-    .loading-con-start>div {
-      position: relative;
-      box-sizing: border-box;
-    }
-
-    .loading-con-start {
-      display: block;
-      font-size: 0;
-      color: #000;
-      transform: scale(1.6);
-    }
-
-    .loading-con-start.la-dark {
-      color: #333;
-    }
-
-    .loading-con-start>div {
-      display: inline-block;
-      float: none;
-      background-color: currentColor;
-      border: 0 solid currentColor;
-    }
-
-    .loading-con-start {
-      width: 42px;
-      height: 32px;
-    }
-
-    .loading-con-start>div:nth-child(1) {
-      position: absolute;
-      bottom: 32%;
-      left: 18%;
-      width: 14px;
-      height: 14px;
-      border-radius: 100%;
-      transform-origin: center bottom;
-      animation: ball-climbing-dot-jump 0.6s ease-in-out infinite;
-    }
-
-    .loading-con-start>div:not(:nth-child(1)) {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 14px;
-      height: 2px;
-      border-radius: 0;
-      transform: translate(60%, 0);
-      animation: ball-climbing-dot-steps 1.8s linear infinite;
-    }
-
-    .loading-con-start>div:not(:nth-child(1)):nth-child(2) {
-      animation-delay: 0ms;
-    }
-
-    .loading-con-start>div:not(:nth-child(1)):nth-child(3) {
-      animation-delay: -600ms;
-    }
-
-    .loading-con-start>div:not(:nth-child(1)):nth-child(4) {
-      animation-delay: -1200ms;
-    }
-
-    @keyframes ball-climbing-dot-jump {
-      0% {
-        transform: scale(1, 0.7);
+    <style>
+      .start-loading-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999999;
+        width: 100vw;
+        height: 100vh;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
-      20% {
-        transform: scale(0.7, 1.2);
+      .loading-con-start,
+      .loading-con-start > div {
+        position: relative;
+        box-sizing: border-box;
       }
 
-      40% {
-        transform: scale(1, 1);
+      .loading-con-start {
+        display: block;
+        font-size: 0;
+        color: #000;
+        transform: scale(1.6);
       }
 
-      50% {
-        bottom: 125%;
+      .loading-con-start.la-dark {
+        color: #333;
       }
 
-      46% {
-        transform: scale(1, 1);
+      .loading-con-start > div {
+        display: inline-block;
+        float: none;
+        background-color: currentColor;
+        border: 0 solid currentColor;
       }
 
-      80% {
-        transform: scale(0.7, 1.2);
+      .loading-con-start {
+        width: 42px;
+        height: 32px;
       }
 
-      90% {
-        transform: scale(0.7, 1.2);
+      .loading-con-start > div:nth-child(1) {
+        position: absolute;
+        bottom: 32%;
+        left: 18%;
+        width: 14px;
+        height: 14px;
+        border-radius: 100%;
+        transform-origin: center bottom;
+        animation: ball-climbing-dot-jump 0.6s ease-in-out infinite;
       }
 
-      100% {
-        transform: scale(1, 0.7);
-      }
-    }
-
-    @keyframes ball-climbing-dot-steps {
-      0% {
+      .loading-con-start > div:not(:nth-child(1)) {
+        position: absolute;
         top: 0;
         right: 0;
-        opacity: 0;
+        width: 14px;
+        height: 2px;
+        border-radius: 0;
+        transform: translate(60%, 0);
+        animation: ball-climbing-dot-steps 1.8s linear infinite;
       }
 
-      50% {
-        opacity: 1;
+      .loading-con-start > div:not(:nth-child(1)):nth-child(2) {
+        animation-delay: 0ms;
       }
 
-      100% {
-        top: 100%;
-        right: 100%;
-        opacity: 0;
+      .loading-con-start > div:not(:nth-child(1)):nth-child(3) {
+        animation-delay: -600ms;
       }
-    }
-  </style>
-  <script>
-    var _hmt = _hmt || [];
-    (function () {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?2599d441bbeab93bd5a5ff354c2d17e3";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
 
+      .loading-con-start > div:not(:nth-child(1)):nth-child(4) {
+        animation-delay: -1200ms;
+      }
 
-</body>
+      @keyframes ball-climbing-dot-jump {
+        0% {
+          transform: scale(1, 0.7);
+        }
 
+        20% {
+          transform: scale(0.7, 1.2);
+        }
+
+        40% {
+          transform: scale(1, 1);
+        }
+
+        50% {
+          bottom: 125%;
+        }
+
+        46% {
+          transform: scale(1, 1);
+        }
+
+        80% {
+          transform: scale(0.7, 1.2);
+        }
+
+        90% {
+          transform: scale(0.7, 1.2);
+        }
+
+        100% {
+          transform: scale(1, 0.7);
+        }
+      }
+
+      @keyframes ball-climbing-dot-steps {
+        0% {
+          top: 0;
+          right: 0;
+          opacity: 0;
+        }
+
+        50% {
+          opacity: 1;
+        }
+
+        100% {
+          top: 100%;
+          right: 100%;
+          opacity: 0;
+        }
+      }
+    </style>
+    <script>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?2599d441bbeab93bd5a5ff354c2d17e3";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  </body>
 </html>

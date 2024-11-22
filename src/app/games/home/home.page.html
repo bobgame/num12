@@ -6,7 +6,15 @@
   <div class="game-list">
     <ul>
       <li *ngFor="let game of g.gameList" (click)="gotoPage(game.pageName)">
-        <div class="name">{{ game.name | translate }}</div>
+        <div class="icon">
+          <img src="assets/icon/game/{{game.pageName}}.png" />
+        </div>
+        <div>
+          <div class="name">{{ game.name | translate }}</div>
+          <div class="star">
+            999999{{ game.star }} <i class="nwicon nwi-star-full"></i>
+          </div>
+        </div>
       </li>
 
       <!-- 
@@ -16,8 +24,14 @@
       <li class="more-coming">
         <div>{{ 'common.moreComing' | translate }}</div>
       </li>
-      <li class="about" (click)="gotoPage(PageName.about)">
-        <div>{{ 'common.aboutAndContact' | translate }}</div>
+      <li class="bottom-con">
+        <div
+          class="bottom-item"
+          *ngFor="let bottomIcon of dialogService.bottomIcons"
+          (click)="dialogService.openDialog(bottomIcon.popup)"
+        >
+          <i class="nwicon nwi-{{ bottomIcon.nwIcon }}"></i>
+        </div>
       </li>
     </ul>
   </div>

@@ -1,34 +1,30 @@
 <div id="nw-app-container" [class.is-web]="isWeb">
-  <div class="knowledge-container" *ngIf="isWeb">
-    <router-outlet></router-outlet>
+  <div class="page-container" *ngIf="isWeb">
+    <div class="page-main">
+      <nm-ui-nav></nm-ui-nav>
+      <div class="main-info-container" [class.only-web]="g.show.onlyWeb">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
   </div>
   <div>
     <div class="app-container" *ngIf="!g.show.onlyWeb">
-      @switch (g.show.pageName) {
-      @case (PageName.home) {
+      @switch (g.show.pageName) { @case (PageName.home) {
       <nm-home></nm-home>
-      }
-      @case (PageName.about) {
+      } @case (PageName.about) {
       <nm-about></nm-about>
-      }
-      @case (PageName.slider) {
+      } @case (PageName.slider) {
       <nm-slider></nm-slider>
-      }
-      @case (PageName.nPuzzle) {
+      } @case (PageName.nPuzzle) {
       <nm-n-puzzle></nm-n-puzzle>
-      }
-      @case (PageName.n2048) {
-      <nm-n-2048></nm-n-2048>
-      }
-      @case (PageName.numGuess) {
+      } @case (PageName.n2048) {
+      <nm-n2048></nm-n2048>
+      } @case (PageName.numGuess) {
       <nm-num-guess></nm-num-guess>
-      }
-      @case (PageName.sudoku) {
+      } @case (PageName.sudoku) {
       <nm-sudoku></nm-sudoku>
-      }
-      }
+      } }
+      <nm-star *ngIf="g.show.pop.star"></nm-star>
     </div>
   </div>
-
-  <nm-star *ngIf="g.show.pop.star"></nm-star>
 </div>

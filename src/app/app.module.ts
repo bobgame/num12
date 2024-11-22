@@ -11,7 +11,6 @@ import { AppComponent } from './app.component'
 import { provideHotToastConfig } from '@ngneat/hot-toast'
 import { NgCircleProgressModule } from 'ng-circle-progress'
 import { StarComponent } from './common/pop/star/star.component'
-import { KnowledgeComponent } from './knowledge/knowledge.component'
 import { HttpLoaderFactory } from './common/modules/translation.module'
 import { HttpClient, HttpClientModule } from '@angular/common/http'
 import { NgToggleModule } from 'ng-toggle-button'
@@ -23,7 +22,8 @@ import { NumGuessComponent } from './games/num-guess/num-guess.component'
 import { SliderComponent } from './games/slider/slider.component'
 import { SudokuComponent } from './games/sudoku/sudoku.component'
 import { HomeComponent } from './games/home/home.page'
-import { AboutComponent } from './pages/about/about.component'
+import { AboutComponent } from './games/about/about.component'
+import { UiNavComponent } from './common/ui/ui-nav/ui-nav.component'
 
 @Injectable()
 export class MyHammerConfig extends HammerGestureConfig {
@@ -58,7 +58,6 @@ export class MyHammerConfig extends HammerGestureConfig {
       closeOnBackdropClick: false,
       closeButton: true,
     }),
-    KnowledgeComponent,
     SliderComponent,
     NPuzzleComponent,
     N2048Component,
@@ -66,6 +65,7 @@ export class MyHammerConfig extends HammerGestureConfig {
     SudokuComponent,
     AboutComponent,
     HomeComponent,
+    UiNavComponent,
   ],
   exports: [NgCircleProgressModule,
   ],

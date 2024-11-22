@@ -41,9 +41,11 @@
   "k": {
     "title": "NUM12",
     "nav": {
+      "dashboard": "Dashboard",
       "introduce": "Introduce",
-      "singleNum": "Single number",
-      "numGames": "Num games"
+      "history": "History",
+      "world": "World",
+      "games": "Games"
     },
     "introduce": {
       "title": "Knowledge of number",

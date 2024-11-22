@@ -6,7 +6,7 @@ import { TranslateService } from '@ngx-translate/core'
 })
 export class LanguageService {
   public isLanguageLoaded = false
-  private readonly defaultLanguage = 'zh-hans'
+  private readonly defaultLanguage = 'en'
   private readonly supportedLanguages: Array<string> = [
     'en',
     'zh-hans',

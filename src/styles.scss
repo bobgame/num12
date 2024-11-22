@@ -89,6 +89,7 @@ button {
   height: 100vh;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.02);
+  position: relative;
 }
 
 .container {
@@ -136,7 +137,7 @@ button {
   .container {
     .play-con-center {
       // width: 50vh;
-      height: calc(100vh - 6vh - #{$webPadding} * 2 - #{$webContainPadding} * 4);
+      height: calc(100vh - 6vh - #{$webContainPadding} * 4);
 
       .score-con {
         // width: 50vh;

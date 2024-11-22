@@ -1,12 +1,24 @@
 // is-web
-$borderRadiusLg: 20px;
-$borderRadiusMd: 12px;
-$borderRadiusSm: 6px;
+$borderRadiusLg: 0;
+$borderRadiusMd: 0;
+$borderRadiusSm: 0;
 
-$webPadding: 40px;
 $webContainPadding: 20px;
-$webAppContainerHeight: calc(100vh - #{$webPadding} * 2 - #{$webContainPadding} * 2);
+$webAppContainerHeight: calc(100vh - #{$webContainPadding} * 2);
 $webMinWidth: 1140px;
+
+$leftNavWidth: 160px;
+
+// $borderRadiusLg: 20px;
+// $borderRadiusMd: 12px;
+// $borderRadiusSm: 6px;
+
+// $webPadding: 40px;
+// $webContainPadding: 20px;
+// $webAppContainerHeight: calc(100vh - #{$webPadding} * 2 - #{$webContainPadding} * 2);
+// $webMinWidth: 1140px;
+
+// $leftNavWidth: 160px;
 
 /* 旧语法 */
 // .section::-webkit-scrollbar-thumb:hover {

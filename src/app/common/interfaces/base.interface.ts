@@ -1,4 +1,4 @@
-import { GameName, PageName } from '../enums/base.enum'
+import { GameName, PageName, RouteName } from '../enums/base.enum'
 
 export interface GameListItem {
   id: number,
@@ -25,4 +25,10 @@ export interface GameShow {
     star: boolean,
     [key: string]: boolean,
   }
+}
+
+export interface NavItem {
+  name: string
+  nav: RouteName
+  routerLink: string
 }
