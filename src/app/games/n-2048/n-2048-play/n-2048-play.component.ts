@@ -67,6 +67,7 @@ export class N2048PlayComponent implements OnInit {
       setTimeout(() => {
         this.isSliding = false
         this.addAnimation()
+        this.n2048Service.n2048Data.steps++
       }, this.moveOneTime * 0.6)
     }, this.moveOneTime * 1)
   }
