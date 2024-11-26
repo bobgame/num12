@@ -3,8 +3,8 @@
 
   .game-title {
     font-weight: bold;
-    padding-top: 5vh;
-    margin-bottom: 5vh;
+    padding-top: 3vh;
+    margin-bottom: 3vh;
 
     h1 {
       font-size: 4.5vh;
@@ -26,29 +26,39 @@
       flex-wrap: wrap;
 
       li {
-        height: 7vh;
-        border-bottom: 1px solid #ccc;
+        height: 8vh;
+        border-top: 1px solid #ccc;
         cursor: pointer;
         display: flex;
         // justify-content: space-between;
         align-items: center;
         padding: 0 2%;
-        width: 45%;
+        width: 100%;
 
         .icon {
-          width: 4vh;
-          height: 4vh;
+          width: 6vh;
+          height: 6vh;
+          position: relative;
+          border: 1px solid #ffffff00;
+          box-shadow: 0 0 8px rgba(0, 0, 0, .1);
+          border-radius: 1000px;
+          overflow: hidden;
 
           img {
-            width: 100%;
-            height: 100%;
+            $imgOffset: 2px;
+            position: absolute;
+            width: calc(100% + #{$imgOffset} * 2);
+            height: calc(100% + #{$imgOffset} * 2);
+            left: calc(#{$imgOffset} * -1);
+            top: calc(#{$imgOffset} * -1);
+            transform: rotate(-15deg);
           }
         }
 
         .name {
-          font-size: 1.8vh;
+          font-size: 2.4vh;
           // text-decoration: underline;
-          color: #d64f0c;
+          // color: #d64f0c;
           width: 100%;
           padding-left: 2vh;
           text-align: left;
@@ -65,6 +75,30 @@
             font-size: 1.4vh;
           }
         }
+
+        .go-icon {
+          width: 3vh;
+          height: 6vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          i {
+            font-size: 2.4vh;
+            color: #d64f0c;
+            rotate: 180deg;
+          }
+        }
+
+      }
+
+      .all-stars {
+        width: 100%;
+        color: #d64f0c;
+        font-size: 2.4vh;
+        text-align: center;
+        margin-bottom: 1vh;
+        // margin-right: 2vh;
       }
 
       .more-coming {

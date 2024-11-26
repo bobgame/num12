@@ -5,15 +5,19 @@
   </div>
   <div class="game-list">
     <ul>
+      <div class="all-stars"><i class="nwicon nwi-star-full"></i> 9999</div>
       <li *ngFor="let game of g.gameList" (click)="gotoPage(game.pageName)">
         <div class="icon">
-          <img src="assets/icon/game/{{game.pageName}}.png" />
+          <img src="assets/icon/game/{{game.pageName}}.png" draggable="false" />
         </div>
         <div>
           <div class="name">{{ game.name | translate }}</div>
           <div class="star">
-            99{{ game.star }} <i class="nwicon nwi-star-full"></i>
+            <i class="nwicon nwi-star-full"></i> 99{{ game.star }}
           </div>
+        </div>
+        <div class="ml-auto relative go-icon">
+          <i class="nwicon nwi-arrow-left absolute"></i>
         </div>
       </li>
 
