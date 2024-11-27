@@ -1,18 +1,33 @@
-<div class="num-guess-play-container">
-  <nm-ui-header title="Number Guess" [backEnabled]="true" (back)="g.navigate()"></nm-ui-header>
+<div class="num-guess-play-container" #numGuessPlayContainer>
+  <nm-ui-header
+    title="Number Guess"
+    [backEnabled]="true"
+    (back)="g.navigate()"
+  ></nm-ui-header>
   <div class="play-con-center">
     <div class="score-con">
-      <div class="steps">{{'common.leftSteps' | translate}}: <span>{{numGuessService.numGuessData.steps}}</span></div>
-      <div class="steps"><i class="nwicon nwi-star-full"></i>: <span>{{numGuessService.numGuessData.star}}</span></div>
+      <div class="steps">
+        {{ "common.leftSteps" | translate }}:
+        <span>{{ numGuessService.numGuessData.steps }}</span>
+      </div>
+      <div class="steps">
+        <i class="nwicon nwi-star-full"></i>:
+        <span>{{ numGuessService.numGuessData.star }}</span>
+      </div>
     </div>
     <div class="game-con-center" #gameConCenter>
       <div class="num-guess-con">
         <div class="result-con">
           <div class="result-list">
-            <div class="result-item" *ngFor="let historyItem of numGuessService.numGuessData.histories">
+            <div
+              class="result-item"
+              *ngFor="let historyItem of numGuessService.numGuessData.histories"
+            >
               <div>
-                <div>{{historyItem.guess}}</div>
-                <div><span class="color-a">{{historyItem.a}}A</span><span class="color-b"> {{historyItem.b}}B</span>
+                <div>{{ historyItem.guess }}</div>
+                <div>
+                  <span class="color-a">{{ historyItem.a }}A</span
+                  ><span class="color-b"> {{ historyItem.b }}B</span>
                 </div>
               </div>
             </div>
@@ -25,21 +40,39 @@
         <div class="input-con">
           <div class="show-con">
             <div class="show-num-list">
-              <div class="show-num-item" *ngFor="let item of guess">{{item === -1 ? '-' : item}}</div>
+              <div class="show-num-item" *ngFor="let item of guess">
+                {{ item === -1 ? "-" : item }}
+              </div>
             </div>
           </div>
-          <div class="delete-con" [class.is-disable]="guess[numGuessService.numGuessData.length - 1] !== -1"
-            (click)="deleteClick()">
-            <div class="delete-button"><i class="nwicon nwi-backspace"></i></div>
+          <div
+            class="delete-con"
+            [class.is-disable]="
+              guess[numGuessService.numGuessData.length - 1] !== -1
+            "
+            (click)="deleteClick()"
+          >
+            <div class="delete-button">
+              <i class="nwicon nwi-backspace"></i>
+            </div>
           </div>
-          <div class="submit-con" [class.is-disable]="isDisabled(-1)" (click)="submitClick()">
+          <div
+            class="submit-con"
+            [class.is-disable]="isDisabled(-1)"
+            (click)="submitClick()"
+          >
             <div class="submit-button"><i class="nwicon nwi-yes"></i></div>
           </div>
         </div>
         <div class="num-con">
           <div class="num-list">
-            <div class="num-item" [class.is-disable]="isDisabled(num)" [class.is-not-in]="isMustNotIn(num)"
-              *ngFor="let num of numGuessService.numBase" (click)="numClick(num)">
+            <div
+              class="num-item"
+              [class.is-disable]="isDisabled(num)"
+              [class.is-not-in]="isMustNotIn(num)"
+              *ngFor="let num of numGuessService.numBase"
+              (click)="numClick(num)"
+            >
               {{ num }}
             </div>
             <div class="num-empty"></div>
@@ -50,8 +83,6 @@
         </div>
       </div>
     </div>
-    <div class="control-con">
-
-    </div>
+    <div class="control-con"></div>
   </div>
 </div>

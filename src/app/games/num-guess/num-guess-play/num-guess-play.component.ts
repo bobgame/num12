@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common'
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, ViewContainerRef } from '@angular/core'
 import { UiHeaderComponent } from 'src/app/common/ui/ui-header/ui-header.component'
 import { NumGuessService } from '../num-guess.service'
 import { GlobalService } from 'src/app/common/services/global.service'
@@ -16,6 +16,7 @@ import { TranslateModule } from '@ngx-translate/core'
 export class NumGuessPlayComponent implements OnInit {
 
   constructor(
+    private viewContainerRef: ViewContainerRef,
     public g: GlobalService,
     public numGuessService: NumGuessService,
     private lazyDialogService: LazyDialogService,
@@ -24,6 +25,7 @@ export class NumGuessPlayComponent implements OnInit {
 
   ngOnInit() {
     this.init()
+    this.openGameoverDialog()
   }
 
   init() {
