@@ -23,6 +23,7 @@ import { SudokuComponent } from './games/sudoku/sudoku.component'
 import { HomeComponent } from './games/home/home.page'
 import { AboutComponent } from './games/about/about.component'
 import { UiNavComponent } from './common/ui/ui-nav/ui-nav.component'
+import { LoadingComponent } from './games/loading/loading.component'
 
 @Injectable()
 export class MyHammerConfig extends HammerGestureConfig {
@@ -68,6 +69,7 @@ export class MyHammerConfig extends HammerGestureConfig {
     SudokuComponent,
     AboutComponent,
     HomeComponent,
+    LoadingComponent,
     UiNavComponent,
   ],
   providers: [
@@ -77,6 +79,6 @@ export class MyHammerConfig extends HammerGestureConfig {
     },
     { provide: LocationStrategy, useClass: HashLocationStrategy },
     provideHttpClient(withInterceptorsFromDi()),
-  ]
+  ],
 })
 export class AppModule { }

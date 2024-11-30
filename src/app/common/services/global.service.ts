@@ -10,7 +10,8 @@ import { specialStoreItem } from '../data/base'
 import { clone } from 'lodash-es'
 import { appConfig } from 'src/app/app.config'
 import { LanguageService } from './language.service'
-import { SettingsEnum, settingsDefault } from '../data/settings'
+import { SettingItem, SettingsEnum, settingsDefault } from '../data/settings'
+import { rand } from 'src/app/units/Base'
 
 @Injectable({
   providedIn: 'root',
@@ -55,18 +56,25 @@ export class GlobalService {
     onlyWeb: false,
     pop: {
       star: false,
+      loading: true,
     },
   }
 
-  getSetting = (id: SettingsEnum): any => this.settings.find(s => s.id === id) || { id: 0, value: '' }
+  getSetting = (id: SettingsEnum): SettingItem => this.settings.find(s => s.id === id) || { id: 0, value: '' }
 
   navigate(page: PageName = PageName.home) {
-    this.show.pageName = page
+    this.show.pop.loading = true
+    setTimeout(() => {
+      this.show.pageName = page
+    }, 0)
+    setTimeout(() => {
+      this.show.pop.loading = false
+    }, 800 + 200 * rand())
     // this.router.navigate([page])
   }
 
   goBack() {
-    this.show.pageName = PageName.home
+    this.navigate(PageName.home)
   }
 
   instant(key: string, interpolateParams?: object | undefined) {
@@ -235,6 +243,7 @@ export class GlobalService {
   // Storage end
 
   toast(message: string) {
+    console.log(message)
     // this.toastService.show(message)
   }
 }

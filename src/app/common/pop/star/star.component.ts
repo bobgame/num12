@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core'
 import { GlobalService } from '../../services/global.service'
 
 @Component({
-  selector: 'nm-star',
-  templateUrl: './star.component.html',
-  styleUrls: ['./star.component.scss'],
+    selector: 'nm-star',
+    templateUrl: './star.component.html',
+    styleUrls: ['./star.component.scss'],
+    standalone: false
 })
 export class StarComponent implements OnInit {
 

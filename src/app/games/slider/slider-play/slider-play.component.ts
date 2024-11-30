@@ -11,11 +11,10 @@ import { cloneDeep, flatten, intersectionWith, isEqual } from 'lodash-es'
 import { TranslateModule } from '@ngx-translate/core'
 
 @Component({
-  selector: 'nm-slider-play',
-  templateUrl: './slider-play.component.html',
-  styleUrls: ['./slider-play.component.scss'],
-  standalone: true,
-  imports: [CommonModule, UiHeaderComponent, TranslateModule],
+    selector: 'nm-slider-play',
+    templateUrl: './slider-play.component.html',
+    styleUrls: ['./slider-play.component.scss'],
+    imports: [CommonModule, UiHeaderComponent, TranslateModule]
 })
 export class SliderPlayComponent implements OnInit {
   constructor(public sliderService: SliderService, public g: GlobalService) {}

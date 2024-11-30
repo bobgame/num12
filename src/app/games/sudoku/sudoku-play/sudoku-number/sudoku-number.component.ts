@@ -4,11 +4,10 @@ import { SudokuService } from '../../sudoku.service'
 import { SudoItem } from '../../sudoku.d'
 
 @Component({
-  selector: 'nm-sudoku-number',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './sudoku-number.component.html',
-  styleUrls: ['./sudoku-number.component.scss'],
+    selector: 'nm-sudoku-number',
+    imports: [CommonModule],
+    templateUrl: './sudoku-number.component.html',
+    styleUrls: ['./sudoku-number.component.scss']
 })
 export class SudokuNumberComponent {
 

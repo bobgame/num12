@@ -9,7 +9,6 @@ import { DialogService } from 'src/app/common/services/dialog.service'
   selector: 'nm-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  standalone: true,
   imports: [CommonModule, TranslateModule],
 })
 export class HomeComponent {
@@ -18,6 +17,8 @@ export class HomeComponent {
     public dialogService: DialogService,
   ) {
     console.log('HomePage constructor')
+
+    this.g.show.pop.loading = false
   }
   PageName = PageName
 

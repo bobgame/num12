@@ -29,4 +29,6 @@ export enum PageName {
   help = 'help',
   settings = 'settings',
   about = 'about',
+
+  loading = 'loading',
 }

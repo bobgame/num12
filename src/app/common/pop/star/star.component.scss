@@ -1,4 +1,4 @@
-@import 'src/app/app.theme.scss';
+@use 'src/app/app.theme.scss' as *;
 
 .star-container {
   position: absolute;

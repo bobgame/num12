@@ -7,11 +7,10 @@ import { GlobalService } from 'src/app/common/services/global.service'
 import { TranslateModule } from '@ngx-translate/core'
 
 @Component({
-  selector: 'nm-n-puzzle-play',
-  templateUrl: './n-puzzle-play.component.html',
-  styleUrls: ['./n-puzzle-play.component.scss'],
-  standalone: true,
-  imports: [CommonModule, UiHeaderComponent, TranslateModule],
+    selector: 'nm-n-puzzle-play',
+    templateUrl: './n-puzzle-play.component.html',
+    styleUrls: ['./n-puzzle-play.component.scss'],
+    imports: [CommonModule, UiHeaderComponent, TranslateModule]
 })
 export class NPuzzlePlayComponent implements OnInit {
 

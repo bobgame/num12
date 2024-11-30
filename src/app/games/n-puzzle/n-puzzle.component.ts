@@ -6,8 +6,7 @@ import { CommonModule } from '@angular/common'
   selector: 'nm-n-puzzle',
   templateUrl: './n-puzzle.component.html',
   styleUrls: ['./n-puzzle.component.scss'],
-  standalone: true,
-  imports: [CommonModule, NPuzzlePlayComponent],
+  imports: [CommonModule, NPuzzlePlayComponent]
 })
 export class NPuzzleComponent implements OnInit {
 

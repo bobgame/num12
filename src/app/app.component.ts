@@ -4,10 +4,12 @@ import { LanguageService } from './common/services/language.service'
 import { TranslateService } from '@ngx-translate/core'
 import { PageName } from './common/enums/base.enum'
 
+// eslint-disable-next-line @angular-eslint/prefer-standalone
 @Component({
   selector: 'nm-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
+  standalone: false,
 })
 export class AppComponent implements OnInit, AfterViewInit {
   constructor(
@@ -16,6 +18,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     private translate: TranslateService,
   ) {
     // this.translate.use('en')
+    console.log(this.translate.currentLang)
     console.log('AppComponent constructor')
   }
   PageName = PageName

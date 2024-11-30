@@ -8,11 +8,10 @@ import { N2048Item } from '../n-2048'
 import { TranslateModule } from '@ngx-translate/core'
 
 @Component({
-  selector: 'nm-n-2048-play',
-  templateUrl: './n-2048-play.component.html',
-  styleUrls: ['./n-2048-play.component.scss'],
-  standalone: true,
-  imports: [CommonModule, UiHeaderComponent, TranslateModule],
+    selector: 'nm-n-2048-play',
+    templateUrl: './n-2048-play.component.html',
+    styleUrls: ['./n-2048-play.component.scss'],
+    imports: [CommonModule, UiHeaderComponent, TranslateModule]
 })
 export class N2048PlayComponent implements OnInit {
 

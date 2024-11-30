@@ -8,11 +8,10 @@ import { SudokuNumberComponent } from './sudoku-number/sudoku-number.component'
 import { GlobalService } from 'src/app/common/services/global.service'
 
 @Component({
-  selector: 'nm-sudoku-play',
-  standalone: true,
-  imports: [CommonModule, UiHeaderComponent, SudokuNumberComponent],
-  templateUrl: './sudoku-play.component.html',
-  styleUrls: ['./sudoku-play.component.scss'],
+    selector: 'nm-sudoku-play',
+    imports: [CommonModule, UiHeaderComponent, SudokuNumberComponent],
+    templateUrl: './sudoku-play.component.html',
+    styleUrls: ['./sudoku-play.component.scss']
 })
 export class SudokuPlayComponent implements OnInit, OnDestroy {
   constructor(

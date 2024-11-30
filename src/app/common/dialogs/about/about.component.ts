@@ -5,11 +5,10 @@ import { TranslateModule } from '@ngx-translate/core'
 import { appConfig } from 'src/app/app.config'
 
 @Component({
-  selector: 'nm-about',
-  standalone: true,
-  imports: [CommonModule, TranslateModule],
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss'],
+    selector: 'nm-about',
+    imports: [CommonModule, TranslateModule],
+    templateUrl: './about.component.html',
+    styleUrls: ['./about.component.scss']
 })
 export class AboutComponent {
   public myData: {message: string} = {message: ''}

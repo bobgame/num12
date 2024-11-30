@@ -4,11 +4,10 @@ import { CommonModule } from '@angular/common'
 import { SliderService } from './slider.service'
 
 @Component({
-  selector: 'nm-slider',
-  templateUrl: './slider.component.html',
-  styleUrls: ['./slider.component.scss'],
-  standalone: true,
-  imports: [CommonModule, SliderPlayComponent],
+    selector: 'nm-slider',
+    templateUrl: './slider.component.html',
+    styleUrls: ['./slider.component.scss'],
+    imports: [CommonModule, SliderPlayComponent]
 })
 export class SliderComponent implements OnInit {
   constructor(

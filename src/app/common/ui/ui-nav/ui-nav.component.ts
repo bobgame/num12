@@ -10,11 +10,10 @@ import { Router } from '@angular/router'
 import { DialogService } from '../../services/dialog.service'
 
 @Component({
-  selector: 'nm-ui-nav',
-  standalone: true,
-  imports: [CommonModule, TranslateModule],
-  templateUrl: './ui-nav.component.html',
-  styleUrl: './ui-nav.component.scss',
+    selector: 'nm-ui-nav',
+    imports: [CommonModule, TranslateModule],
+    templateUrl: './ui-nav.component.html',
+    styleUrl: './ui-nav.component.scss'
 })
 export class UiNavComponent implements OnInit {
   constructor(

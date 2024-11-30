@@ -6,7 +6,6 @@ import { GlobalService } from '../../services/global.service'
   selector: 'nm-ui-header',
   templateUrl: './ui-header.component.html',
   styleUrls: ['./ui-header.component.scss'],
-  standalone: true,
   imports: [CommonModule],
 })
 export class UiHeaderComponent {
@@ -21,7 +20,10 @@ export class UiHeaderComponent {
   ) {}
 
   backClick() {
-    this.back.emit()
+    this.g.show.pop.loading = true
+    setTimeout(() => {
+      this.back.emit()
+    }, 100)
   }
 
   openStarPop() {

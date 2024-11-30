@@ -8,7 +8,6 @@ import { SettingsEnum } from '../../data/settings'
 
 @Component({
   selector: 'nm-settings',
-  standalone: true,
   imports: [CommonModule, TranslateModule, NgToggleModule],
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.scss'],
@@ -28,7 +27,7 @@ export class SettingsComponent implements OnInit {
   ngOnInit() {
     // getting data
     this.myData = this._dialogRef.data
-    this.settings.onlyGame = this.g.getSetting(SettingsEnum.OnlyGame) === true
+    this.settings.onlyGame = this.g.getSetting(SettingsEnum.OnlyGame).value === true
   }
 
   setOnlyGame() {

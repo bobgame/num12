@@ -23,6 +23,7 @@ export interface GameShow {
   onlyWeb: boolean,
   pop: {
     star: boolean,
+    loading: boolean,
     [key: string]: boolean,
   }
 }

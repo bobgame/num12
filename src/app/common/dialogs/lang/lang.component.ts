@@ -8,11 +8,10 @@ interface LangItem {
   name: string
 }
 @Component({
-  selector: 'nm-lang',
-  standalone: true,
-  imports: [CommonModule, TranslateModule],
-  templateUrl: './lang.component.html',
-  styleUrls: ['./lang.component.scss'],
+    selector: 'nm-lang',
+    imports: [CommonModule, TranslateModule],
+    templateUrl: './lang.component.html',
+    styleUrls: ['./lang.component.scss']
 })
 export class LangComponent implements OnInit {
   public myData: {message: string} = {message: ''}

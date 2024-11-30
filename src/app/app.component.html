@@ -24,6 +24,7 @@
       } @case (PageName.sudoku) {
       <nm-sudoku></nm-sudoku>
       } }
+      <nm-loading *ngIf="g.show.pop.loading"></nm-loading>
       <nm-star *ngIf="g.show.pop.star"></nm-star>
     </div>
   </div>
