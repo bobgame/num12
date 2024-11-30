@@ -2,11 +2,10 @@ import { NgModule, ModuleWithProviders } from '@angular/core'
 
 import { TranslateLoader, TranslateModule, TranslatePipe } from '@ngx-translate/core'
 import { TranslateHttpLoader } from '@ngx-translate/http-loader'
-import { HttpClient, HttpClientModule } from '@angular/common/http'
+import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 
 @NgModule({
   imports: [
-    HttpClientModule,
     TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,
@@ -14,8 +13,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http'
         deps: [HttpClient],
       },
       isolate: false,
-    }),
-  ],
+    })],
+  providers: [provideHttpClient(withInterceptorsFromDi())],
   exports: [TranslateModule, TranslatePipe],
 })
 export class TranslationModule {

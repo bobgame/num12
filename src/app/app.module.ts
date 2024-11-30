@@ -11,7 +11,7 @@ import { AppComponent } from './app.component'
 import { NgCircleProgressModule } from 'ng-circle-progress'
 import { StarComponent } from './common/pop/star/star.component'
 import { HttpLoaderFactory } from './common/modules/translation.module'
-import { HttpClient, HttpClientModule } from '@angular/common/http'
+import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { NgToggleModule } from 'ng-toggle-button'
 import { ngToggleConfig } from './app.config'
 import { LocationStrategy, HashLocationStrategy } from '@angular/common'
@@ -36,10 +36,14 @@ export class MyHammerConfig extends HammerGestureConfig {
     AppComponent,
     StarComponent,
   ],
+  exports: [
+    NgCircleProgressModule,
+  ],
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule,
     AppRoutingModule,
     HammerModule,
     TranslateModule.forRoot({
@@ -66,16 +70,13 @@ export class MyHammerConfig extends HammerGestureConfig {
     HomeComponent,
     UiNavComponent,
   ],
-  exports: [NgCircleProgressModule,
-  ],
   providers: [
     {
       provide: HAMMER_GESTURE_CONFIG,
       useClass: MyHammerConfig,
     },
     { provide: LocationStrategy, useClass: HashLocationStrategy },
-  ],
-  bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    provideHttpClient(withInterceptorsFromDi()),
+  ]
 })
 export class AppModule { }
