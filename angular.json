@@ -22,7 +22,9 @@
             "outputPath": "dist/num12",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": ["zone.js"],
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -33,11 +35,14 @@
               }
             ],
             "styles": [
-              "src/styles.scss",
-              "node_modules/@ngneat/hot-toast/src/styles/styles.scss"
+              "src/styles.scss"
             ],
             "scripts": [],
-            "allowedCommonJsDependencies": ["dayjs", "localforage", "hammerjs"]
+            "allowedCommonJsDependencies": [
+              "dayjs",
+              "localforage",
+              "hammerjs"
+            ]
           },
           "configurations": {
             "production": {

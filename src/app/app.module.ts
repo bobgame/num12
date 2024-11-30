@@ -1,5 +1,5 @@
 import { CUSTOM_ELEMENTS_SCHEMA, Injectable, NgModule } from '@angular/core'
-import { BrowserModule, HammerGestureConfig, HAMMER_GESTURE_CONFIG, HammerModule} from '@angular/platform-browser'
+import { BrowserModule, HammerGestureConfig, HAMMER_GESTURE_CONFIG, HammerModule } from '@angular/platform-browser'
 import { FormsModule } from '@angular/forms'
 import * as Hammer from 'hammerjs'
 
@@ -8,7 +8,6 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core'
 import { AppRoutingModule } from './app-routing.module'
 import { LazyDialogModule } from 'ngx-lazy-dialog'
 import { AppComponent } from './app.component'
-import { provideHotToastConfig } from '@ngneat/hot-toast'
 import { NgCircleProgressModule } from 'ng-circle-progress'
 import { StarComponent } from './common/pop/star/star.component'
 import { HttpLoaderFactory } from './common/modules/translation.module'
@@ -75,7 +74,6 @@ export class MyHammerConfig extends HammerGestureConfig {
       useClass: MyHammerConfig,
     },
     { provide: LocationStrategy, useClass: HashLocationStrategy },
-    provideHotToastConfig(), // @ngneat/hot-toast providers
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

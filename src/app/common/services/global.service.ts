@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core'
 import { GameName, PageName } from '../enums/base.enum'
 import { Router } from '@angular/router'
-import { HotToastService } from '@ngneat/hot-toast'
 import { GameData, GameListItem, GameShow } from '../interfaces/base.interface'
 import { environment } from 'src/environments/environment'
 import { TranslateService } from '@ngx-translate/core'
@@ -19,10 +18,9 @@ import { SettingsEnum, settingsDefault } from '../data/settings'
 export class GlobalService {
   constructor(
     private router: Router,
-    private toastService: HotToastService,
     private translate: TranslateService,
     private languageService: LanguageService,
-  ) {}
+  ) { }
 
   environment = environment
   settings = clone(settingsDefault)
@@ -30,11 +28,11 @@ export class GlobalService {
   gameData: GameData = {
     allStar: 0,
     gameList: [
-      {id: 1, name: GameName.slider, pageName: PageName.slider, star: 0},
-      {id: 2, name: GameName.nPuzzle, pageName: PageName.nPuzzle, star: 0},
-      {id: 3, name: GameName.n2048, pageName: PageName.n2048, star: 0},
-      {id: 4, name: GameName.numGuess, pageName: PageName.numGuess, star: 0},
-      {id: 5, name: GameName.sudoku, pageName: PageName.sudoku, star: 0},
+      { id: 1, name: GameName.slider, pageName: PageName.slider, star: 0 },
+      { id: 2, name: GameName.nPuzzle, pageName: PageName.nPuzzle, star: 0 },
+      { id: 3, name: GameName.n2048, pageName: PageName.n2048, star: 0 },
+      { id: 4, name: GameName.numGuess, pageName: PageName.numGuess, star: 0 },
+      { id: 5, name: GameName.sudoku, pageName: PageName.sudoku, star: 0 },
     ],
     gameHistory: {
       slider: {
@@ -44,11 +42,11 @@ export class GlobalService {
   }
 
   gameList: GameListItem[] = [
-    {id: 1, name: GameName.slider, pageName: PageName.slider, star: 0},
-    {id: 2, name: GameName.nPuzzle, pageName: PageName.nPuzzle, star: 0},
-    {id: 3, name: GameName.n2048, pageName: PageName.n2048, star: 0},
-    {id: 4, name: GameName.numGuess, pageName: PageName.numGuess, star: 0},
-    {id: 5, name: GameName.sudoku, pageName: PageName.sudoku, star: 0},
+    { id: 1, name: GameName.slider, pageName: PageName.slider, star: 0 },
+    { id: 2, name: GameName.nPuzzle, pageName: PageName.nPuzzle, star: 0 },
+    { id: 3, name: GameName.n2048, pageName: PageName.n2048, star: 0 },
+    { id: 4, name: GameName.numGuess, pageName: PageName.numGuess, star: 0 },
+    { id: 5, name: GameName.sudoku, pageName: PageName.sudoku, star: 0 },
   ]
 
   show: GameShow = {
@@ -60,7 +58,7 @@ export class GlobalService {
     },
   }
 
-  getSetting = (id: SettingsEnum): any => this.settings.find(s => s.id === id) || {id: 0, value: ''}
+  getSetting = (id: SettingsEnum): any => this.settings.find(s => s.id === id) || { id: 0, value: '' }
 
   navigate(page: PageName = PageName.home) {
     this.show.pageName = page
@@ -237,6 +235,6 @@ export class GlobalService {
   // Storage end
 
   toast(message: string) {
-    this.toastService.show(message)
+    // this.toastService.show(message)
   }
 }
