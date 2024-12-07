@@ -14,10 +14,10 @@ import { PageName } from './common/enums/base.enum'
 export class AppComponent implements OnInit, AfterViewInit {
   constructor(
     public g: GlobalService,
-    private languageService: LanguageService,
+    public languageService: LanguageService,
     private translate: TranslateService,
   ) {
-    // this.translate.use('en')
+    this.languageService.useLanguage('zh-hans')
     console.log(this.translate.currentLang)
     console.log('AppComponent constructor')
   }

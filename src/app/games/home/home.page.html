@@ -5,15 +5,15 @@
   </div>
   <div class="game-list">
     <ul>
-      <div class="all-stars"><i class="nwicon nwi-star-full"></i> 9999</div>
-      <li *ngFor="let game of g.gameList" (click)="gotoPage(game.pageName)">
+      <div class="all-stars"><i class="nwicon nwi-star-full"></i> 0</div>
+      <li *ngFor="let game of g.gameData.gameList" (click)="gotoPage(game.pageName)">
         <div class="icon">
           <img src="assets/icon/game/{{game.pageName}}.png" draggable="false" />
         </div>
         <div>
           <div class="name">{{ game.name | translate }}</div>
           <div class="star">
-            <i class="nwicon nwi-star-full"></i> 99{{ game.star }}
+            <i class="nwicon nwi-star-full"></i>{{ game.star }}
           </div>
         </div>
         <div class="ml-auto relative go-icon">
@@ -29,11 +29,8 @@
         <div>{{ 'common.moreComing' | translate }}</div>
       </li>
       <li class="bottom-con">
-        <div
-          class="bottom-item"
-          *ngFor="let bottomIcon of dialogService.bottomIcons"
-          (click)="dialogService.openDialog(bottomIcon.popup)"
-        >
+        <div class="bottom-item" *ngFor="let bottomIcon of dialogService.bottomIcons"
+          (click)="dialogService.openDialog(bottomIcon.popup)">
           <i class="nwicon nwi-{{ bottomIcon.nwIcon }}"></i>
         </div>
       </li>

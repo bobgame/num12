@@ -4,10 +4,10 @@ import { LazyDialogRef } from 'ngx-lazy-dialog'
 import { TranslateModule } from '@ngx-translate/core'
 
 @Component({
-    selector: 'nm-num-guess-gameover',
-    imports: [CommonModule, TranslateModule],
-    templateUrl: './num-guess-gameover.component.html',
-    styleUrls: ['./num-guess-gameover.component.scss']
+  selector: 'nm-num-guess-gameover',
+  imports: [CommonModule, TranslateModule],
+  templateUrl: './num-guess-gameover.component.html',
+  styleUrls: ['./num-guess-gameover.component.scss'],
 })
 export class NumGuessGameoverComponent implements OnInit {
   public myData: {message: string} = {message: ''}

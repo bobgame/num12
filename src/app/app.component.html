@@ -1,4 +1,5 @@
-<div id="nw-app-container" [class.is-web]="isWeb">
+<div id="nw-app-container" [class.is-web]="isWeb"
+  class="lang-{{languageService.currentLanguage}} short-lang-{{languageService.shortLanguage}}">
   <div class="page-container" *ngIf="isWeb">
     <div class="page-main">
       <nm-ui-nav></nm-ui-nav>

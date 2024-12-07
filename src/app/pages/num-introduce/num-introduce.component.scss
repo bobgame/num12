@@ -1,0 +1,25 @@
+.num-introduce-container {
+  .introduce-con {
+    .category-con {
+      .cate-item {
+        ul {
+          li {
+            margin-bottom: 6px;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+:host-context(.short-lang-zh) {
+  .num-introduce-container {
+
+    // li,
+    p {
+      text-indent: 2em;
+    }
+
+  }
+}

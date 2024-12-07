@@ -13,6 +13,7 @@ export class LanguageService {
     'zh-hant',
   ]
   currentLanguage = this.defaultLanguage
+  shortLanguage = this.defaultLanguage.split('-')[0]
 
   constructor(
     private translate: TranslateService,
@@ -38,6 +39,7 @@ export class LanguageService {
       .subscribe(() => {
         // console.log(111)
         this.currentLanguage = lang
+        this.shortLanguage = lang.split('-')[0]
       })
   }
 

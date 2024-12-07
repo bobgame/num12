@@ -1,8 +1,16 @@
 <div class="num-introduce-container">
-  <div>
+  <div class="introduce-con">
     <h1>{{'k.introduce.title' | translate}}</h1>
     <div *ngIf="descriptions.length > 0">
       <p *ngFor="let desc of descriptions">{{desc}}</p>
+    </div>
+    <div class="category-con" *ngIf="categories.length > 0">
+      <div class="cate-item" *ngFor="let cateItem of categories">
+        <h3>{{cateItem.title}}</h3>
+        <ul>
+          <li *ngFor="let textHtml of cateItem.texts" [innerHtml]="textHtml"></li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

@@ -1,19 +1,16 @@
-<div class="title">
-  <div>{{ "k.singleNum.title" | translate }}</div>
-</div>
-<div class="info-con">
-  <div>
-    <ul class="num-list">
-      <li>0</li>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-      <li>5</li>
-      <li>6</li>
-      <li>7</li>
-      <li>8</li>
-      <li>9</li>
-    </ul>
+<div class="num-dashboard-container">
+  <div class="title">{{'k.title' | translate }}</div>
+  <div class="dashboard-con">
+    <div class="dashboard-item" *ngFor="let item of dashboardList" (click)="go(item.route)">
+      <div>
+        <div class="name">{{ item.title | translate }}</div>
+      </div>
+    </div>
+    <div class="dashboard-item dashboard-item-empty"></div>
+    <div class="dashboard-item dashboard-item-empty"></div>
+    <div class="dashboard-item dashboard-item-empty"></div>
+    <div class="dashboard-item dashboard-item-empty"></div>
+    <div class="dashboard-item dashboard-item-empty"></div>
+    <div class="dashboard-item dashboard-item-empty"></div>
+    <div class="dashboard-item dashboard-item-empty"></div>
   </div>
-</div>

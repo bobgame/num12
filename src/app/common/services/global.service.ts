@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core'
 import { GameName, PageName } from '../enums/base.enum'
 import { Router } from '@angular/router'
-import { GameData, GameListItem, GameShow } from '../interfaces/base.interface'
+import { GameData, GameShow } from '../interfaces/base.interface'
 import { environment } from 'src/environments/environment'
 import { TranslateService } from '@ngx-translate/core'
 import localforage from 'localforage'
@@ -41,14 +41,6 @@ export class GlobalService {
       },
     },
   }
-
-  gameList: GameListItem[] = [
-    { id: 1, name: GameName.slider, pageName: PageName.slider, star: 0 },
-    { id: 2, name: GameName.nPuzzle, pageName: PageName.nPuzzle, star: 0 },
-    { id: 3, name: GameName.n2048, pageName: PageName.n2048, star: 0 },
-    { id: 4, name: GameName.numGuess, pageName: PageName.numGuess, star: 0 },
-    { id: 5, name: GameName.sudoku, pageName: PageName.sudoku, star: 0 },
-  ]
 
   show: GameShow = {
     pageName: PageName.home,

@@ -1,1 +1,18 @@
-<p>num-games works!</p>
+<div class="num-games-container">
+  <div class="num-games-con">
+    <h1>{{'k.nav.games' | translate}}</h1>
+    <div class="game-list">
+      <div class="game-item" *ngFor="let game of g.gameData.gameList" (click)="gotoGame(game.pageName)">
+        <div class="icon">
+          <img src="assets/icon/game/{{game.pageName}}.png" draggable="false" />
+        </div>
+        <div>
+          <div class="name">{{ game.name | translate }}</div>
+        </div>
+        <div class="star ml-auto">
+          <i class="nwicon nwi-star-full"></i> {{ game.star }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

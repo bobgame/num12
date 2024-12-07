@@ -7,10 +7,10 @@ import { LazyDialogConfig, LazyDialogService } from 'ngx-lazy-dialog'
 import { TranslateModule } from '@ngx-translate/core'
 
 @Component({
-    selector: 'nm-num-guess-play',
-    templateUrl: './num-guess-play.component.html',
-    styleUrls: ['./num-guess-play.component.scss'],
-    imports: [CommonModule, UiHeaderComponent, TranslateModule]
+  selector: 'nm-num-guess-play',
+  templateUrl: './num-guess-play.component.html',
+  styleUrls: ['./num-guess-play.component.scss'],
+  imports: [CommonModule, UiHeaderComponent, TranslateModule],
 })
 export class NumGuessPlayComponent implements OnInit {
 
@@ -24,7 +24,7 @@ export class NumGuessPlayComponent implements OnInit {
 
   ngOnInit() {
     this.init()
-    this.openGameoverDialog()
+    // this.openGameoverDialog()
   }
 
   init() {
