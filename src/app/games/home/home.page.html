@@ -6,7 +6,7 @@
   <div class="game-list">
     <ul>
       <div class="all-stars"><i class="nwicon nwi-star-full"></i> 0</div>
-      <li *ngFor="let game of g.gameData.gameList" (click)="gotoPage(game.pageName)">
+      <li class="game-item" *ngFor="let game of g.gameData.gameList" (click)="gotoPage(game.pageName)">
         <div class="icon">
           <img src="assets/icon/game/{{game.pageName}}.png" draggable="false" />
         </div>

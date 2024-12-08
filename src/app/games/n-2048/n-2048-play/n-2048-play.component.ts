@@ -6,12 +6,13 @@ import { N2048Service } from '../n-2048.service'
 import { BaseDirection } from 'src/app/common/types/base'
 import { N2048Item } from '../n-2048'
 import { TranslateModule } from '@ngx-translate/core'
+import { UiControlComponent } from 'src/app/common/ui/ui-control/ui-control.component'
 
 @Component({
-    selector: 'nm-n-2048-play',
-    templateUrl: './n-2048-play.component.html',
-    styleUrls: ['./n-2048-play.component.scss'],
-    imports: [CommonModule, UiHeaderComponent, TranslateModule]
+  selector: 'nm-n-2048-play',
+  templateUrl: './n-2048-play.component.html',
+  styleUrls: ['./n-2048-play.component.scss'],
+  imports: [CommonModule, UiHeaderComponent, UiControlComponent, TranslateModule],
 })
 export class N2048PlayComponent implements OnInit {
 

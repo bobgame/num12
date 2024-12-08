@@ -1,23 +1,13 @@
 .sudoku-play-container {
+  height: 100%;
+
   .play-con-center {
-    $top: 47%;
-
-    .score-con {
-      top: $top;
-    }
-
 
     .game-con-center {
-      position: absolute;
+      position: relative;
       width: 92%;
-      height: 92vh;
       overflow: hidden;
-      left: 50%;
-      top: $top;
-      transform: translate(-50%, -50%);
-      // margin-top: 20vh;
-      // border-radius: 4vh;
-      // border: 2px solid #ccc;
+      margin: 0 auto;
     }
 
 
@@ -67,12 +57,9 @@
       justify-content: center;
       align-items: center;
       flex-grow: 20;
-      position: absolute;
-      left: 0;
-      top: $top;
       width: 92%;
       height: 11vh;
-      margin-top: calc(46% + 3vh);
+      margin-bottom: 6vh;
     }
 
     .number-btns {

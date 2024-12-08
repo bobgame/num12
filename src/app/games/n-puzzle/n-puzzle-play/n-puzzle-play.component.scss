@@ -5,18 +5,16 @@
 }
 
 .n-puzzle-play-container {
+  height: 100%;
+
   .play-con-center {
 
     .game-con-center {
-      position: absolute;
+      position: relative;
       width: 92%;
-      height: 92vh;
+      margin: 0 auto;
       overflow: hidden;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
       border: 2px solid #ccc;
-      border-radius: 2vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -42,7 +40,6 @@
             width: 95%;
             height: 95%;
             font-size: 6vw;
-            border-radius: 1.5vh;
             display: flex;
             align-items: center;
             justify-content: center;

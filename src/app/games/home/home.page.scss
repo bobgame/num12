@@ -28,12 +28,20 @@
       li {
         height: 8vh;
         border-top: 1px solid #ccc;
-        cursor: pointer;
         display: flex;
         // justify-content: space-between;
         align-items: center;
         padding: 0 2%;
         width: 100%;
+
+        &.game-item {
+          cursor: pointer;
+          transition: all .3s;
+
+          &:hover {
+            background: #f1f1f1;
+          }
+        }
 
         .icon {
           width: 6vh;
@@ -43,6 +51,7 @@
           box-shadow: 0 0 8px rgba(0, 0, 0, .1);
           border-radius: 1000px;
           overflow: hidden;
+          background: #fff;
 
           img {
             $imgOffset: 2px;
@@ -84,8 +93,8 @@
           align-items: center;
 
           i {
-            font-size: 2.4vh;
-            color: #004f93;
+            font-size: 2.2vh;
+            color: #666;
             rotate: 180deg;
           }
         }
@@ -110,25 +119,26 @@
       }
 
       .bottom-con {
-        padding: 0 30%;
+        justify-content: center;
 
         .bottom-item {
-          height: 40px;
-          width: 40px;
+          height: 5vh;
+          width: 5vh;
           display: flex;
           justify-content: center;
           align-items: center;
           cursor: pointer;
           transition: all .3s;
+          margin: 0 1vh;
 
           i {
-            font-size: 20px;
+            font-size: 3vh;
             color: #666;
           }
 
           &:hover,
           &.is-active {
-            background: rgba(0, 0, 0, .05);
+            background: #f1f1f1;
 
             i {
               color: #2a82e4;

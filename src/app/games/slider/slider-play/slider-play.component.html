@@ -1,56 +1,48 @@
 <div class="slider-play-container">
   <nm-ui-header [title]="'gameName.slider' | translate" [backEnabled]="true" (back)="g.navigate()"></nm-ui-header>
   <div class="play-con-center">
-    <div class="score-con">
-      <div class="step-item steps capitalize">{{'common.leftSteps' | translate}}:
-        <span>{{sliderService.sliderData.steps}}</span>
-      </div>
-      <div class="step-item score capitalize">{{'common.score' | translate}}:
-        <span>{{sliderService.sliderData.score}}</span>
-      </div>
-      <div class="step-item star"><i class="nwicon nwi-star-full"></i>: <span>{{sliderService.sliderData.star}}</span>
-      </div>
-    </div>
-    <div class="game-con-center" #gameConCenter [style.height.px]="gameConCenter.offsetWidth">
-      <div class="slider-con" #sliderCon [ngStyle]="{
-        width: gameConCenter.clientWidth / 5 * 12 + 'px',
-        height: gameConCenter.clientWidth / 5 * 12 + 'px',
-        left: gameConCenter.clientWidth / 5 * -3.5 + 'px',
-        top: gameConCenter.clientWidth / 5 * -3.5 + 'px',
-      }">
-        <div class="slider-item" *ngFor="let item of sliderService.sliderItems" [ngStyle]="{
-            width: gameConCenter.clientWidth / 5 + 'px',
-            height: gameConCenter.clientWidth / 5 + 'px',
-            'transform': 'translateX(' + item.x * gameConCenter.clientWidth / 5 + 'px) translateY(' + item.y * gameConCenter.clientWidth / 5 + 'px)'
-          }" [class.opacity-0]="item.x < 3 || item.x > 8 || item.y < 3 || item.y > 8"
-          [class.opacity-1]="!(item.x < 3 || item.x > 8 || item.y < 3 || item.y > 8)"
-          [class.has-animation]="item.animation">
-          <div class="slider-num slider-num-{{item.num}}"
-            [ngStyle]="{'font-size': gameConCenter.clientWidth / 5 / 3 + 'px'}">{{item.num}}</div>
+    <div class="play-con">
+      <div class="score-con">
+        <div class="step-item steps capitalize">{{'common.leftSteps' | translate}}:
+          <span>{{sliderService.sliderData.steps}}</span>
+        </div>
+        <div class="step-item score capitalize">{{'common.score' | translate}}:
+          <span>{{sliderService.sliderData.score}}</span>
+        </div>
+        <div class="step-item star"><i class="nwicon nwi-star-full"></i>: <span>{{sliderService.sliderData.star}}</span>
         </div>
       </div>
-      <div class="mask-con" (swipeleft)="onSwipeLeft($event)" (swiperight)="onSwipeRight($event)"
-        (swipeup)="onSwipeUp($event)" (swipedown)="onSwipeDown($event)">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-          <path
-            d="m0,0v100h100V0H0Zm87.5,89.5H12.5c-1.1,0-2-.9-2-2V12.5c0-1.1.9-2,2-2h75c1.1,0,2,.9,2,2v75c0,1.1-.9,2-2,2Z"
-            style="fill: rgba(0, 0, 0, 0.3);" />
-        </svg>
+      <div class="game-con-center" #gameConCenter [style.height.px]="gameConCenter.offsetWidth">
+        <div class="slider-con" #sliderCon [ngStyle]="{
+          width: gameConCenter.clientWidth / 5 * 12 + 'px',
+          height: gameConCenter.clientWidth / 5 * 12 + 'px',
+          left: gameConCenter.clientWidth / 5 * -3.5 + 'px',
+          top: gameConCenter.clientWidth / 5 * -3.5 + 'px',
+        }">
+          <div class="slider-item" *ngFor="let item of sliderService.sliderItems" [ngStyle]="{
+              width: gameConCenter.clientWidth / 5 + 'px',
+              height: gameConCenter.clientWidth / 5 + 'px',
+              'transform': 'translateX(' + item.x * gameConCenter.clientWidth / 5 + 'px) translateY(' + item.y * gameConCenter.clientWidth / 5 + 'px)'
+            }" [class.opacity-0]="item.x < 3 || item.x > 8 || item.y < 3 || item.y > 8"
+            [class.opacity-1]="!(item.x < 3 || item.x > 8 || item.y < 3 || item.y > 8)"
+            [class.has-animation]="item.animation">
+            <div class="slider-num slider-num-{{item.num}}"
+              [ngStyle]="{'font-size': gameConCenter.clientWidth / 5 / 3 + 'px'}">{{item.num}}</div>
+          </div>
+        </div>
+        <div class="mask-con" (swipeleft)="onSwipeLeft($event)" (swiperight)="onSwipeRight($event)"
+          (swipeup)="onSwipeUp($event)" (swipedown)="onSwipeDown($event)">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <path
+              d="m0,0v100h100V0H0Zm87.5,89.5H12.5c-1.1,0-2-.9-2-2V12.5c0-1.1.9-2,2-2h75c1.1,0,2,.9,2,2v75c0,1.1-.9,2-2,2Z"
+              style="fill: rgba(0, 0, 0, 0.3);" />
+          </svg>
+        </div>
       </div>
-    </div>
-    <div class="control-con">
-      <button class="btn btn-left" (click)="startSlide('left')">
-        <i class="nwicon nwi-arrow-left"></i>
-      </button>
-      <button class="btn btn-right" (click)="startSlide('right')">
-        <i class="nwicon nwi-arrow-left rotate-180"></i>
-      </button>
-      <button class="btn btn-up" (click)="startSlide('up')">
-        <i class="nwicon nwi-arrow-left rotate-90"></i>
-      </button>
-      <button class="btn btn-down" (click)="startSlide('down')">
-        <i class="nwicon nwi-arrow-left rotate-270"></i>
-      </button>
+      <div class="control-con">
+        <nm-ui-control (left)="startSlide('left')" (right)="startSlide('right')" (up)="startSlide('up')"
+          (down)="startSlide('down')"></nm-ui-control>
+      </div>
     </div>
   </div>
 </div>

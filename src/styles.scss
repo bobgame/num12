@@ -86,11 +86,17 @@ button {
 }
 
 .app-container {
-  width: 100vw;
+  width: 50vh;
+  max-width: 100vw;
   height: 100vh;
+  margin: 0 auto;
   overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.02);
+  background: #fefefe;
   position: relative;
+
+  * {
+    font-size: 2vh;
+  }
 }
 
 .ml-auto {
@@ -128,18 +134,22 @@ h3 {
 
   .play-con-center {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: calc(94vh - 8vw);
-    display: block;
+    height: calc(100% - 6vh);
+
+    .play-con {
+      width: 100%;
+    }
 
     .score-con {
-      position: absolute;
-      left: 0;
-      top: 50%;
-      margin-top: calc(-46% - 8vh);
+      position: relative;
       width: 100%;
-      height: 8vh;
-      padding: 0 15px;
+      height: 4vh;
+      padding: 0 2vh;
+      margin-bottom: 2vh;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -147,6 +157,13 @@ h3 {
       span {
         color: #dd6b0d;
       }
+    }
+
+    .control-con {
+      position: relative;
+      width: 100%;
+      height: 13vh;
+      margin-top: 4vh;
     }
   }
 }
@@ -186,7 +203,7 @@ h3 {
 }
 
 .dialog-content-common {
-  font-family: "segoe ui", serif;
+  // font-family: "segoe ui", serif;
   width: 400px;
   max-width: 100%;
 

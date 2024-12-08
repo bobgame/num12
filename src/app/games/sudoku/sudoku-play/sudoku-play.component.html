@@ -1,53 +1,56 @@
 <div class="sudoku-play-container">
   <nm-ui-header title="sudoku" [backEnabled]="true" (back)="g.navigate()"></nm-ui-header>
   <div class="play-con-center">
-    <div class="score-con">
-      <!-- <div class="steps">Steps: <span>{{sudokuService.sudokuData.steps}}</span></div>
-      <div class="steps">Score: <span>{{sudokuService.sudokuData.score}}</span></div>
-      <div class="steps">Star: <span>{{sudokuService.sudokuData.star}}</span></div> -->
-      <!-- <div class="hard-mode">{{sudokuService.sudokuData.nowHardModeName | translate}}
-        Lv{{sudokuService.sudokuData.nowLv}}</div> -->
-      <div class="star-con flex-center">
-        <i class="nwicon nwi-star-full star-item color-red" *ngFor="let star of sudokuService.starArr"
-          [hidden]="star > sudokuService.sudokuData.star"></i>
-        <i class="nwicon nwi-star-empty star-item color-red" *ngFor="let star of sudokuService.starArr"
-          [hidden]="star <= sudokuService.sudokuData.star"></i>
-      </div>
-      <div class="time" (click)="clickPlayOrPauseBtn()">
-        {{sudokuService.sudokuShowData.showTime}} <i class="nwicon nwi-pause pl-2"></i>
-      </div>
-    </div>
-    <div class="game-con-center" #gameConCenter [style.height.px]="gameConCenter.offsetWidth">
-      <div class="number-content" [style.height.px]="gameConCenter.offsetWidth">
-        <div *ngFor="let cell of cellArr; let i = index" class="number-item" [ngClass]="{
-               'line-b-s': cell.bottomSmall,
-               'line-b-m': cell.bottomMiddle,
-               'line-r-s': cell.rightSmall, 
-               'line-r-m': cell.rightMiddle
-              }">
-          <nm-sudoku-number [sudoItem]="sudokuService.sudokuData.sudo[i]"></nm-sudoku-number>
+    <div class="play-con">
+      <div class="score-con">
+        <!-- <div class="steps">Steps: <span>{{sudokuService.sudokuData.steps}}</span></div>
+        <div class="steps">Score: <span>{{sudokuService.sudokuData.score}}</span></div>
+        <div class="steps">Star: <span>{{sudokuService.sudokuData.star}}</span></div> -->
+        <!-- <div class="hard-mode">{{sudokuService.sudokuData.nowHardModeName | translate}}
+          Lv{{sudokuService.sudokuData.nowLv}}</div> -->
+        <div class="star-con flex-center">
+          <i class="nwicon nwi-star-full star-item color-red" *ngFor="let star of sudokuService.starArr"
+            [hidden]="star > sudokuService.sudokuData.star"></i>
+          <i class="nwicon nwi-star-empty star-item color-red" *ngFor="let star of sudokuService.starArr"
+            [hidden]="star <= sudokuService.sudokuData.star"></i>
+        </div>
+        <div class="time" (click)="clickPlayOrPauseBtn()">
+          {{sudokuService.sudokuShowData.showTime}} <i class="nwicon nwi-pause pl-2"></i>
         </div>
       </div>
-    </div>
-    <div class="control-con">
-      <div class="tools-btns text-center" *ngIf="toolsButtonShow === 1">
-        <button class="tool-btn" (click)="clearPlayNumber()" [disabled]="sudokuService.sudokuShowData.playNumber === 0">
-          <i class="nwicon nwi-clear"></i>
-        </button>
-        <button class="tool-btn" (click)="setThisEditBoardStatus()"
-          [disabled]="sudokuService.sudokuShowData.playNumber === 0">
-          <i class="nwicon nwi-small-no" *ngIf="!sudokuService.sudokuShowData.isEdit"></i>
-          <i class="nwicon nwi-small-yes" *ngIf="sudokuService.sudokuShowData.isEdit"></i>
-        </button>
-        <!-- <button class="tool-btn" (click)="newGame()">
-          <i class="nwicon nwi-new"></i>
-        </button> -->
+      <div class="game-con-center" #gameConCenter [style.height.px]="gameConCenter.offsetWidth">
+        <div class="number-content" [style.height.px]="gameConCenter.offsetWidth">
+          <div *ngFor="let cell of cellArr; let i = index" class="number-item" [ngClass]="{
+                 'line-b-s': cell.bottomSmall,
+                 'line-b-m': cell.bottomMiddle,
+                 'line-r-s': cell.rightSmall, 
+                 'line-r-m': cell.rightMiddle
+                }">
+            <nm-sudoku-number [sudoItem]="sudokuService.sudokuData.sudo[i]"></nm-sudoku-number>
+          </div>
+        </div>
       </div>
-      <div class="number-btns">
-        <button class="num-btn" *ngFor="let number of numArr" (click)="clickPlayNumber(number)"
-          [disabled]="sudokuService.sudokuShowData.playNumber === 0">
-          {{number}}
-        </button>
+      <div class="control-con">
+        <div class="tools-btns text-center" *ngIf="toolsButtonShow === 1">
+          <button class="tool-btn" (click)="clearPlayNumber()"
+            [disabled]="sudokuService.sudokuShowData.playNumber === 0">
+            <i class="nwicon nwi-clear"></i>
+          </button>
+          <button class="tool-btn" (click)="setThisEditBoardStatus()"
+            [disabled]="sudokuService.sudokuShowData.playNumber === 0">
+            <i class="nwicon nwi-small-no" *ngIf="!sudokuService.sudokuShowData.isEdit"></i>
+            <i class="nwicon nwi-small-yes" *ngIf="sudokuService.sudokuShowData.isEdit"></i>
+          </button>
+          <!-- <button class="tool-btn" (click)="newGame()">
+            <i class="nwicon nwi-new"></i>
+          </button> -->
+        </div>
+        <div class="number-btns">
+          <button class="num-btn" *ngFor="let number of numArr" (click)="clickPlayNumber(number)"
+            [disabled]="sudokuService.sudokuShowData.playNumber === 0">
+            {{number}}
+          </button>
+        </div>
       </div>
     </div>
   </div>

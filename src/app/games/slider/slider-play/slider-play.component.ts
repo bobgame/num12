@@ -9,12 +9,13 @@ import { BaseDirection } from 'src/app/common/types/base'
 import { SliderScoreScale, baseScore } from '../slider.const'
 import { cloneDeep, flatten, intersectionWith, isEqual } from 'lodash-es'
 import { TranslateModule } from '@ngx-translate/core'
+import { UiControlComponent } from 'src/app/common/ui/ui-control/ui-control.component'
 
 @Component({
-    selector: 'nm-slider-play',
-    templateUrl: './slider-play.component.html',
-    styleUrls: ['./slider-play.component.scss'],
-    imports: [CommonModule, UiHeaderComponent, TranslateModule]
+  selector: 'nm-slider-play',
+  templateUrl: './slider-play.component.html',
+  styleUrls: ['./slider-play.component.scss'],
+  imports: [CommonModule, UiHeaderComponent, UiControlComponent, TranslateModule],
 })
 export class SliderPlayComponent implements OnInit {
   constructor(public sliderService: SliderService, public g: GlobalService) {}

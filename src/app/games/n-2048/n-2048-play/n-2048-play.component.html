@@ -1,32 +1,38 @@
 <div class="n-2048-play-container">
   <nm-ui-header title="{{'gameName.n2048' | translate}}" [backEnabled]="true" (back)="g.navigate()"></nm-ui-header>
   <div class="play-con-center">
-    <div class="score-con">
-      <div class="steps">{{'common.leftSteps' | translate}}: <span>{{n2048Service.n2048Data.steps}}</span></div>
-      <div class="step-item star"><i class="nwicon nwi-star-full"></i>: <span>{{n2048Service.n2048Data.star}}</span>
-      </div>
-    </div>
-    <div class="game-con-center" #n2048PlayGameConCenter [style.height.px]="n2048PlayGameConCenter.offsetWidth"
-      (swipeleft)="onSwipeLeft()" (swiperight)="onSwipeRight()" (swipeup)="onSwipeUp()" (swipedown)="onSwipeDown()">
-      <div class="num-bg-con">
-        <div class="bg-item" *ngFor="let item of n2048Service.n2048BgItems" [ngStyle]="{
-            'transform': 'translateX(' + item.x * n2048PlayNumCon.clientWidth / 4 + 'px) translateY(' + item.y * n2048PlayNumCon.clientWidth / 4 + 'px)',
-            'width': n2048PlayNumCon.clientWidth / 4 + 'px',
-            'height': n2048PlayNumCon.clientWidth / 4 + 'px',
-          }">
-          <div class="bg-item-inner"></div>
+    <div class="play-con">
+      <div class="score-con">
+        <div class="steps">{{'common.steps' | translate}}: <span>{{n2048Service.n2048Data.steps}}</span></div>
+        <div class="step-item star"><i class="nwicon nwi-star-full"></i>: <span>{{n2048Service.n2048Data.star}}</span>
         </div>
       </div>
-      <div class="num-con" #n2048PlayNumCon>
-        <div class="num-item" *ngFor="let item of n2048Service.n2048Items" [ngStyle]="{
-            'transform': 'translateX(' + item.x * n2048PlayNumCon.clientWidth / 4 + 'px) translateY(' + item.y * n2048PlayNumCon.clientWidth / 4 + 'px)',
-            'width': n2048PlayNumCon.clientWidth / 4 + 'px',
-            'height': n2048PlayNumCon.clientWidth / 4 + 'px',
-          }" [class.has-animation]="item.animation">
-          <div class="num num-{{item.num}}" [ngStyle]="{
-            'font-size': item.num > 9999 ? n2048PlayNumCon.clientWidth / 4 / 5 + 'px' :  n2048PlayNumCon.clientWidth / 4 / 3 + 'px',
-          }">{{item.num}}</div>
+      <div class="game-con-center" #n2048PlayGameConCenter [style.height.px]="n2048PlayGameConCenter.offsetWidth"
+        (swipeleft)="onSwipeLeft()" (swiperight)="onSwipeRight()" (swipeup)="onSwipeUp()" (swipedown)="onSwipeDown()">
+        <div class="num-bg-con">
+          <div class="bg-item" *ngFor="let item of n2048Service.n2048BgItems" [ngStyle]="{
+              'transform': 'translateX(' + item.x * n2048PlayNumCon.clientWidth / 4 + 'px) translateY(' + item.y * n2048PlayNumCon.clientWidth / 4 + 'px)',
+              'width': n2048PlayNumCon.clientWidth / 4 + 'px',
+              'height': n2048PlayNumCon.clientWidth / 4 + 'px',
+            }">
+            <div class="bg-item-inner"></div>
+          </div>
         </div>
+        <div class="num-con" #n2048PlayNumCon>
+          <div class="num-item" *ngFor="let item of n2048Service.n2048Items" [ngStyle]="{
+              'transform': 'translateX(' + item.x * n2048PlayNumCon.clientWidth / 4 + 'px) translateY(' + item.y * n2048PlayNumCon.clientWidth / 4 + 'px)',
+              'width': n2048PlayNumCon.clientWidth / 4 + 'px',
+              'height': n2048PlayNumCon.clientWidth / 4 + 'px',
+            }" [class.has-animation]="item.animation">
+            <div class="num num-{{item.num}}" [ngStyle]="{
+              'font-size': item.num > 9999 ? n2048PlayNumCon.clientWidth / 4 / 5 + 'px' :  n2048PlayNumCon.clientWidth / 4 / 3 + 'px',
+            }">{{item.num}}</div>
+          </div>
+        </div>
+      </div>
+      <div class="control-con">
+        <nm-ui-control (left)="onSwipeLeft()" (right)="onSwipeRight()" (up)="onSwipeUp()"
+          (down)="onSwipeDown()"></nm-ui-control>
       </div>
     </div>
   </div>

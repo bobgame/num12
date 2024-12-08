@@ -4,7 +4,8 @@ export interface GameListItem {
   id: number,
   name: GameName,
   pageName: PageName,
-  star?: number,
+  star: number,
+  highScore: number,
 }
 
 export interface GameData {

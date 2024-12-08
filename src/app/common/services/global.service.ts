@@ -29,11 +29,11 @@ export class GlobalService {
   gameData: GameData = {
     allStar: 0,
     gameList: [
-      { id: 1, name: GameName.slider, pageName: PageName.slider, star: 0 },
-      { id: 2, name: GameName.nPuzzle, pageName: PageName.nPuzzle, star: 0 },
-      { id: 3, name: GameName.n2048, pageName: PageName.n2048, star: 0 },
-      { id: 4, name: GameName.numGuess, pageName: PageName.numGuess, star: 0 },
-      { id: 5, name: GameName.sudoku, pageName: PageName.sudoku, star: 0 },
+      { id: 1, name: GameName.slider, pageName: PageName.slider, star: 0, highScore: 0 },
+      { id: 2, name: GameName.nPuzzle, pageName: PageName.nPuzzle, star: 0, highScore: 0 },
+      { id: 3, name: GameName.n2048, pageName: PageName.n2048, star: 0, highScore: 0 },
+      { id: 4, name: GameName.numGuess, pageName: PageName.numGuess, star: 0, highScore: 0 },
+      { id: 5, name: GameName.sudoku, pageName: PageName.sudoku, star: 0, highScore: 0 },
     ],
     gameHistory: {
       slider: {

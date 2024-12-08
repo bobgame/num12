@@ -1,19 +1,20 @@
-import { Injectable } from "@angular/core"
-import { NPuzzleItem } from "./n-puzzle"
+import { Injectable } from '@angular/core'
+import { NPuzzleItem } from './n-puzzle'
+import { BaseDirection } from 'src/app/common/types/base'
 
 @Injectable(
-  { providedIn: "root" }
+  { providedIn: 'root' },
 )
 
 export class NPuzzleService {
   constructor() {
-    console.log("NPuzzleService constructor called")
+    console.log('NPuzzleService constructor called')
   }
 
   nPuzzleData = {
     maxNum: 56,
-    maxX: 5,
-    maxY: 5,
+    maxX: 3,
+    maxY: 3,
     steps: 0,
     star: 0,
   }
@@ -53,6 +54,40 @@ export class NPuzzleService {
     }
   }
 
+  move(direction: BaseDirection) {
+    let emptyItem = { x: -1, y: -1 }
+    for (let i = 0; i < this.nPuzzleItems.length + 1; i++) {
+      const empty = this.nPuzzleItems.find(item => item.x === i % this.nPuzzleData.maxX && item.y === Math.floor(i / this.nPuzzleData.maxX))
+      if (!empty) {
+        emptyItem = { x: i % this.nPuzzleData.maxX, y: Math.floor(i / this.nPuzzleData.maxX) }
+        break
+      }
+    }
+    if (emptyItem.x === -1) { return }
+
+    let item: NPuzzleItem | undefined
+    switch (direction) {
+      case 'left':
+        item = this.nPuzzleItems.find(i => i.x === emptyItem.x + 1 && i.y === emptyItem.y)
+        break
+      case 'right':
+        item = this.nPuzzleItems.find(i => i.x === emptyItem.x - 1 && i.y === emptyItem.y)
+        break
+      case 'up':
+        item = this.nPuzzleItems.find(i => i.x === emptyItem.x && i.y === emptyItem.y + 1)
+        break
+      case 'down':
+        item = this.nPuzzleItems.find(i => i.x === emptyItem.x && i.y === emptyItem.y - 1)
+        break
+    }
+
+    if (item) {
+      item.x = emptyItem.x
+      item.y = emptyItem.y
+      this.nPuzzleData.steps++
+    }
+  }
+
   checkEmptyItem(item: NPuzzleItem): {x: number, y: number} | undefined {
     const leftItem = this.nPuzzleItems.find(i => i.x === item.x - 1 && i.y === item.y)
     if (item.x > 0 && !leftItem) { return { x: item.x - 1, y: item.y } }
@@ -73,11 +108,11 @@ export class NPuzzleService {
     for (let i = 0; i < this.nPuzzleData.maxNum - 1; i++) {
       const itemIndex = this.nPuzzleItems[i].num - 1
       if (itemIndex % this.nPuzzleData.maxX !== this.nPuzzleItems[i].x || Math.floor(itemIndex / this.nPuzzleData.maxX) !== this.nPuzzleItems[i].y) {
-        console.log("Not win with: ", itemIndex + 1)
+        console.log('Not win with: ', itemIndex + 1)
         return false
       }
     }
-    console.log("You win!")
+    console.log('You win!')
     return true
   }
 
