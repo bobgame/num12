@@ -14,7 +14,7 @@
     "continue": "繼續",
     "pause": "暫停",
     "settings": "設置",
-    "stars": "星星",
+    "cups": "獎杯",
     "help": "幫助",
     "gameMenu": "遊戲菜單",
     "hardChoose": "難度選擇",
@@ -137,11 +137,21 @@
   },
   "guess": {
     "name": "猜數字",
+    "gameover": {
+      "youWin": "你贏了！恭喜！",
+      "youLose": "你輸了！抱歉！",
+      "useStep": "使用的次數：",
+      "answerIs": "答案是：",
+      "correctAnswerIs": "正確答案是：",
+      "yourAnswerIs": "你的答案是：",
+      "gotCup": "獲得獎杯：",
+      "keepTry": "繼續努力！希望能再見到你！"
+    },
     "helpText1": "以4字難度為例，你需要猜出4個數字。",
     "helpText2": "遊戲將會隨機生成4個數字。",
     "helpText3": "比如 5678，如果猜 0128，遊戲將會提示 1A0B，如果猜 5627，遊戲將會提示 2A1B。",
     "helpText4": "每次遊戲有8次機會。",
-    "helpText5": "用越少次數猜對將獲得越高的星星。"
+    "helpText5": "用越少次數猜對將獲得越高的獎杯。"
   },
   "slider": {
     "name": "滑動吧數字",
@@ -153,12 +163,12 @@
   "2048": {
     "nameB": "2048"
   },
-  "stars": {
-    "name": "星星",
-    "allStarts": "所有星星",
-    "gameStarts": "遊戲星星",
-    "allGet": "共獲得",
-    "quantityAvailableStar": "可用星星"
+  "cups": {
+    "name": "獎杯",
+    "allCups": "所有獎杯",
+    "gameCups": "遊戲獎杯",
+    "total": "共獲得",
+    "quantityAvailableCup": "可用獎杯"
   },
   "settings": {
     "name": "設置",
@@ -169,7 +179,7 @@
     "about": {
       "title": "關於遊戲",
       "version": "版本號：",
-      "author": "作者: Bob Liu (Bob Game)",
+      "author": "作者：Bob Liu (Bob Game)",
       "desc1": "這個是我自己練習寫代碼的作品，全免費，無付費內容，希望玩家喜歡玩。"
     }
   },

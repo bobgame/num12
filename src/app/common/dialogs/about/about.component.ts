@@ -1,28 +1,23 @@
 import { Component } from '@angular/core'
 import { CommonModule } from '@angular/common'
-import { LazyDialogRef } from 'ngx-lazy-dialog'
 import { TranslateModule } from '@ngx-translate/core'
 import { appConfig } from 'src/app/app.config'
+import { UiDialogComponent } from '../ui-dialog.component'
+import { GlobalService } from '../../services/global.service'
 
 @Component({
-    selector: 'nm-about',
-    imports: [CommonModule, TranslateModule],
-    templateUrl: './about.component.html',
-    styleUrls: ['./about.component.scss']
+  selector: 'nm-about',
+  imports: [CommonModule, TranslateModule, UiDialogComponent],
+  templateUrl: './about.component.html',
+  styleUrls: ['./about.component.scss'],
 })
 export class AboutComponent {
-  public myData: {message: string} = {message: ''}
   appConfig = appConfig
-  constructor(private _dialogRef: LazyDialogRef) {
+  constructor(private g: GlobalService) {
   }
 
-  ngOnInit() {
-    // getting data
-    this.myData = this._dialogRef.data
-  }
-
-  close(data?: any) {
-    // closing dialog
-    this._dialogRef.close(data)
+  close() {
+    this.g.show.pop.about = false
+    this.g.show.pop.aboutInApp = false
   }
 }

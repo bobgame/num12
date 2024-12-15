@@ -1,0 +1,15 @@
+<div class="ui-dialog-container">
+  <div class="dialog-mask" (click)="maskClick()"></div>
+  <div class="dialog-content">
+    <div class="dialog-header">
+      <div class="dialog-title">{{ title }}</div>
+      <div class="dialog-close" (click)="close()"><i class="nwicon nwi-close"></i></div>
+    </div>
+    <div class="dialog-body">
+      <ng-content></ng-content>
+    </div>
+    <div class="dialog-footer">
+      <ng-content select="footer"></ng-content>
+    </div>
+  </div>
+</div>

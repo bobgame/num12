@@ -1,6 +1,6 @@
 export interface NumGuessData {
   steps: number
-  star: number
+  cup: number
   count: number
   histories: {
     guess: string

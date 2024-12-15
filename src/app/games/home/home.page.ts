@@ -19,6 +19,8 @@ export class HomeComponent {
     console.log('HomePage constructor')
 
     this.g.show.pop.loading = false
+
+    this.gotoPage(PageName.numGuess) // for test
   }
   PageName = PageName
 

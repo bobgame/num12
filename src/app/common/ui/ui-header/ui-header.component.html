@@ -1,10 +1,10 @@
 <div class="ui-header-container">
   <div class="title-con">{{title}}</div>
-  <div class="back-con">
-    <div *ngIf="backEnabled" class="back-btn" (click)="backClick()">
+  <div class="back-con" (click)="backClick()">
+    <div *ngIf="backEnabled" class="back-btn">
       <i class="nwicon nwi-arrow-left"></i>
       <i class="nwicon nwi-arrow-left left-2"></i>
     </div>
   </div>
-  <div class="right-con" (click)="openStarPop()"><i class="nwicon nwi-star-full"></i></div>
+  <div class="right-con" (click)="openCupPop()"><i class="nwicon nwi-cup"></i></div>
 </div>

@@ -27,13 +27,13 @@ export class GlobalService {
   settings = clone(settingsDefault)
 
   gameData: GameData = {
-    allStar: 0,
+    allCup: 0,
     gameList: [
-      { id: 1, name: GameName.slider, pageName: PageName.slider, star: 0, highScore: 0 },
-      { id: 2, name: GameName.nPuzzle, pageName: PageName.nPuzzle, star: 0, highScore: 0 },
-      { id: 3, name: GameName.n2048, pageName: PageName.n2048, star: 0, highScore: 0 },
-      { id: 4, name: GameName.numGuess, pageName: PageName.numGuess, star: 0, highScore: 0 },
-      { id: 5, name: GameName.sudoku, pageName: PageName.sudoku, star: 0, highScore: 0 },
+      { id: 1, name: GameName.slider, pageName: PageName.slider, cup: 0, highScore: 0 },
+      { id: 2, name: GameName.nPuzzle, pageName: PageName.nPuzzle, cup: 0, highScore: 0 },
+      { id: 3, name: GameName.n2048, pageName: PageName.n2048, cup: 0, highScore: 0 },
+      { id: 4, name: GameName.numGuess, pageName: PageName.numGuess, cup: 0, highScore: 0 },
+      { id: 5, name: GameName.sudoku, pageName: PageName.sudoku, cup: 0, highScore: 0 },
     ],
     gameHistory: {
       slider: {
@@ -47,8 +47,14 @@ export class GlobalService {
     isHP: false,
     onlyWeb: false,
     pop: {
-      star: false,
+      cup: false,
       loading: true,
+      settings: false,
+      lang: false,
+      about: false,
+      settingsInApp: false,
+      langInApp: false,
+      aboutInApp: false,
     },
   }
 
@@ -188,8 +194,6 @@ export class GlobalService {
     const HeroDefaultT = clone(specialStoreItem)
     HeroDefaultT.latitude.age.isActive.balance = {
       hisV: appConfig.hv,
-      // c: clone(this.collect),
-      // s: clone(this.settings),
     }
     const heroStr = JSON.stringify(HeroDefaultT)
     return localforage
@@ -212,14 +216,7 @@ export class GlobalService {
     // }
     HeroDefaultT.latitude.age.isActive.balance = {
       dv: appConfig.dv,
-      // h: clone(this.hero),
-      // k: clone(this.keys),
-      // n: clone(this.now),
-      // c: clone(this.npcs),
-      // a: clone(this.npcsAdventure),
-      // m: clone(this.mails),
-      // p: clone(this.allMaps),
-      // t: clone(this.allTasks),
+      gd: clone(this.gameData),
     }
     const heroStr = JSON.stringify(HeroDefaultT)
     localforage

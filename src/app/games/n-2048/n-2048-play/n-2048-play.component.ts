@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common'
-import { Component, HostListener, OnInit } from '@angular/core'
+import { Component, CUSTOM_ELEMENTS_SCHEMA, HostListener, OnInit } from '@angular/core'
 import { GlobalService } from 'src/app/common/services/global.service'
 import { UiHeaderComponent } from 'src/app/common/ui/ui-header/ui-header.component'
 import { N2048Service } from '../n-2048.service'
@@ -7,12 +7,14 @@ import { BaseDirection } from 'src/app/common/types/base'
 import { N2048Item } from '../n-2048'
 import { TranslateModule } from '@ngx-translate/core'
 import { UiControlComponent } from 'src/app/common/ui/ui-control/ui-control.component'
+import { UiStatusBarComponent } from 'src/app/common/ui/ui-status-bar/ui-status-bar.component'
 
 @Component({
   selector: 'nm-n-2048-play',
   templateUrl: './n-2048-play.component.html',
   styleUrls: ['./n-2048-play.component.scss'],
-  imports: [CommonModule, UiHeaderComponent, UiControlComponent, TranslateModule],
+  imports: [CommonModule, UiHeaderComponent, UiControlComponent, UiStatusBarComponent, TranslateModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class N2048PlayComponent implements OnInit {
 
@@ -23,6 +25,7 @@ export class N2048PlayComponent implements OnInit {
 
   isSliding = false
   moveOneTime = 100
+  isShowMore = false
 
   ngOnInit() {
     this.n2048Service.initBgItems()
@@ -31,8 +34,16 @@ export class N2048PlayComponent implements OnInit {
     setTimeout(() => {
       this.addAnimation()
     }, 300)
+
   }
 
+  showMore() {
+    this.isShowMore = true
+  }
+
+  hideMore() {
+    this.isShowMore = false
+  }
 
   onSwipeLeft() {
     this.startSlide('left')

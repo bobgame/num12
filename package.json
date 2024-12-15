@@ -32,7 +32,6 @@
     "lodash-es": "^4.17.21",
     "ng-circle-progress": "^1.7.1",
     "ng-toggle-button": "^1.5.3",
-    "ngx-lazy-dialog": "^3.0.1",
     "rxjs": "~7.8.1",
     "tslib": "^2.6.2",
     "zone.js": "~0.15.0"

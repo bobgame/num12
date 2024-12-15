@@ -1,6 +1,5 @@
-<div class="dialog-content-common">
-  <h3>{{ 'dialog.lang.title' | translate }}</h3>
-  <div class="dialog-content">
+<nm-ui-dialog (clickClose)="close()" [title]="'dialog.lang.title' | translate">
+  <div class="lang-content">
     <p>{{ 'dialog.lang.desc' | translate }}</p>
     <div class="lang-list">
       <button class="lang-item" [class.is-selected]="langItem.lang === currentLang.lang" *ngFor="let langItem of langs"
@@ -9,8 +8,10 @@
       </button>
     </div>
   </div>
-  <div class="button-con">
-    <button (click)="applyLanguage()">{{ 'common.apply' | translate }}</button>
-    <button (click)="close()">{{ 'common.cancel' | translate }}</button>
-  </div>
-</div>
+  <footer>
+    <div class="button-con">
+      <button (click)="applyLanguage()">{{ 'common.apply' | translate }}</button>
+      <button (click)="close()">{{ 'common.cancel' | translate }}</button>
+    </div>
+  </footer>
+</nm-ui-dialog>

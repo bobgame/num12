@@ -16,7 +16,7 @@ export class NPuzzleService {
     maxX: 3,
     maxY: 3,
     steps: 0,
-    star: 0,
+    cup: 0,
   }
 
   nPuzzleItems: NPuzzleItem[] = [
@@ -48,7 +48,7 @@ export class NPuzzleService {
       item.x = emptyItem.x
       item.y = emptyItem.y
       this.nPuzzleData.steps++
-      // TODO: check get star
+      // TODO: check get cup
 
       this.checkIfWin()
     }

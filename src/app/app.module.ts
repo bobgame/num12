@@ -6,10 +6,9 @@ import * as Hammer from 'hammerjs'
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core'
 
 import { AppRoutingModule } from './app-routing.module'
-import { LazyDialogModule } from 'ngx-lazy-dialog'
 import { AppComponent } from './app.component'
 import { NgCircleProgressModule } from 'ng-circle-progress'
-import { StarComponent } from './common/pop/star/star.component'
+import { CupComponent } from './common/pop/cup/cup.component'
 import { HttpLoaderFactory } from './common/modules/translation.module'
 import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { NgToggleModule } from 'ng-toggle-button'
@@ -21,9 +20,11 @@ import { NumGuessComponent } from './games/num-guess/num-guess.component'
 import { SliderComponent } from './games/slider/slider.component'
 import { SudokuComponent } from './games/sudoku/sudoku.component'
 import { HomeComponent } from './games/home/home.page'
-import { AboutComponent } from './games/about/about.component'
 import { UiNavComponent } from './common/ui/ui-nav/ui-nav.component'
 import { LoadingComponent } from './games/loading/loading.component'
+import { LangComponent } from './common/dialogs/lang/lang.component'
+import { AboutComponent } from './common/dialogs/about/about.component'
+import { SettingsComponent } from './common/dialogs/settings/settings.component'
 
 @Injectable()
 export class MyHammerConfig extends HammerGestureConfig {
@@ -35,7 +36,6 @@ export class MyHammerConfig extends HammerGestureConfig {
 @NgModule({
   declarations: [
     AppComponent,
-    StarComponent,
   ],
   exports: [
     NgCircleProgressModule,
@@ -58,19 +58,19 @@ export class MyHammerConfig extends HammerGestureConfig {
     NgToggleModule.forRoot(ngToggleConfig),
     // Specify ng-circle-progress as an import
     NgCircleProgressModule.forRoot(),
-    LazyDialogModule.forRoot({
-      closeOnBackdropClick: false,
-      closeButton: true,
-    }),
     SliderComponent,
     NPuzzleComponent,
     N2048Component,
     NumGuessComponent,
     SudokuComponent,
     AboutComponent,
+    SettingsComponent,
+    LangComponent,
     HomeComponent,
     LoadingComponent,
     UiNavComponent,
+    CupComponent,
+    LangComponent,
   ],
   providers: [
     {

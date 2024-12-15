@@ -1,26 +1,27 @@
 import { CommonModule } from '@angular/common'
-import { Component, OnInit, ViewContainerRef } from '@angular/core'
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core'
 import { UiHeaderComponent } from 'src/app/common/ui/ui-header/ui-header.component'
 import { NumGuessService } from '../num-guess.service'
 import { GlobalService } from 'src/app/common/services/global.service'
-import { LazyDialogConfig, LazyDialogService } from 'ngx-lazy-dialog'
 import { TranslateModule } from '@ngx-translate/core'
+import { UiStatusBarComponent } from 'src/app/common/ui/ui-status-bar/ui-status-bar.component'
+import { NumGuessGameoverComponent } from '../num-guess-gameover/num-guess-gameover.component'
 
 @Component({
   selector: 'nm-num-guess-play',
   templateUrl: './num-guess-play.component.html',
   styleUrls: ['./num-guess-play.component.scss'],
-  imports: [CommonModule, UiHeaderComponent, TranslateModule],
+  imports: [CommonModule, TranslateModule, UiHeaderComponent, UiStatusBarComponent, NumGuessGameoverComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class NumGuessPlayComponent implements OnInit {
 
   constructor(
-    private viewContainerRef: ViewContainerRef,
     public g: GlobalService,
     public numGuessService: NumGuessService,
-    private lazyDialogService: LazyDialogService,
   ) { }
   guess = [-1, -1, -1, -1]
+  isShowMore = false
 
   ngOnInit() {
     this.init()
@@ -29,6 +30,13 @@ export class NumGuessPlayComponent implements OnInit {
 
   init() {
     this.numGuessService.newGame()
+  }
+  showMore() {
+    this.isShowMore = true
+  }
+
+  hideMore() {
+    this.isShowMore = false
   }
 
   isDisabled(num: number) {
@@ -67,19 +75,7 @@ export class NumGuessPlayComponent implements OnInit {
   }
 
   async openGameoverDialog() {
-    const component = await import('../num-guess-gameover/num-guess-gameover.component').then(m => m.NumGuessGameoverComponent)
-    const data = { message: this.numGuessService.gameResult.htmlMessage }
-
-    const config: LazyDialogConfig = {
-      closeOnBackdropClick: true,
-      closeButton: true,
-      customClasses: 'my-custom-class',
-    }
-
-    const dialog = await this.lazyDialogService.create({component, data, config})
-    dialog.onClose().then((output) => {
-      console.log(output)
-    })
+    this.numGuessService.gameResult.isOver = true
   }
 
 }

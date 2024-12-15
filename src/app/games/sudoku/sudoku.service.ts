@@ -16,10 +16,10 @@ export class SudokuService {
   sudokuShowData: SudokuShowData = clone(SUDOKU_SHOW_DATA)
 
   numArr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-  starArr = [1, 2, 3, 4, 5]
+  cupArr = [1, 2, 3, 4, 5]
   hardModeName = ['common.starter', 'common.normal', 'common.master']
   editBoardTemplate = [false, false, false, false, false, false, false, false, false, false]
-  STAR_MAX = this.starArr.length
+  STAR_MAX = this.cupArr.length
   sudokuData: SudokuData = {
     sudo: [],
     continue: false,
@@ -30,28 +30,28 @@ export class SudokuService {
     errorArr: [],
     nowHardModeName: '',
     time: 0,
-    star: this.STAR_MAX,
+    cup: this.STAR_MAX,
     nowMode: 0,
     nowLv: 0,
     mode: [1, 1, 1],
-    allStars: [
+    allCups: [
       {
         mode: 0,
-        starNum: 0,
+        cupNum: 0,
         totalTime: 0,
-        levelStars: [],
+        levelCups: [],
       },
       {
         mode: 1,
-        starNum: 0,
+        cupNum: 0,
         totalTime: 0,
-        levelStars: [],
+        levelCups: [],
       },
       {
         mode: 2,
-        starNum: 0,
+        cupNum: 0,
         totalTime: 0,
-        levelStars: [],
+        levelCups: [],
       },
     ],
   }
@@ -209,7 +209,7 @@ export class SudokuService {
       this.checkErrors()
       const errorLengthAfter = this.sudokuData.errorArr.length
       if (errorLengthAfter > errorLengthBefore) {
-        if (this.sudokuData.star > 0) { this.sudokuData.star-- }
+        if (this.sudokuData.cup > 0) { this.sudokuData.cup-- }
       }
       this.checkIfNumbersFull()
     }
@@ -427,7 +427,7 @@ export class SudokuService {
     if (this.sudokuData.errorArr.length === 0) {
       // const message = `
       // <p class="mb-2">${this.translate.instant('gameOver.winWin')}</p>
-      // <p class="d-flex align-items-center justify-content-center">${this.translate.instant('common.got')}<span class="color-red pl-1"> <i class="nwicon nwi-star-full color-red"></i> x ${this.sudokuData.star}</span></p>
+      // <p class="d-flex align-items-center justify-content-center">${this.translate.instant('common.got')}<span class="color-red pl-1"> <i class="nwicon nwi-cup color-red"></i> x ${this.sudokuData.cup}</span></p>
       // `
       this.gameOverReset()
       this.saveData()
@@ -440,40 +440,40 @@ export class SudokuService {
   }
 
   gameOverReset() {
-    const winStar = this.sudokuData.star
-    this.sudokuShowData.winStar = winStar
-    const thisSudoStar = this.sudokuData.allStars.find(s => s.mode === this.sudokuData.nowMode)!
-    thisSudoStar.starNum += winStar
+    const winCup = this.sudokuData.cup
+    this.sudokuShowData.winCup = winCup
+    const thisSudoCup = this.sudokuData.allCups.find(s => s.mode === this.sudokuData.nowMode)!
+    thisSudoCup.cupNum += winCup
     const nowLv = this.sudokuData.mode[this.sudokuData.nowMode]
     if (this.sudokuData.nowLv < nowLv) {
-      const thisSudoLevel = thisSudoStar.levelStars.find(ls => ls.lv === this.sudokuData.nowLv)
-      if (thisSudoLevel && thisSudoLevel.starNum < winStar) {
+      const thisSudoLevel = thisSudoCup.levelCups.find(ls => ls.lv === this.sudokuData.nowLv)
+      if (thisSudoLevel && thisSudoLevel.cupNum < winCup) {
         // TODO: 需要修改
-        // const addStar = winStar - thisSudoLevel.starNum
-        // this.all.allData.star += addStar
-        // this.all.allData.allGetStar += addStar
-        // thisSudoLevel.starNum = winStar
-        // this.all.allData.gameStars.find(g => g.id === GameId.sudoku).getStar += addStar
+        // const addCup = winCup - thisSudoLevel.cupNum
+        // this.all.allData.cup += addCup
+        // this.all.allData.allGetCup += addCup
+        // thisSudoLevel.cupNum = winCup
+        // this.all.allData.gameCups.find(g => g.id === GameId.sudoku).getCup += addCup
       }
     } else {
-      thisSudoStar.levelStars.push({
+      thisSudoCup.levelCups.push({
         lv: nowLv,
-        starNum: winStar,
+        cupNum: winCup,
       })
       // TODO: 需要修改
-      // this.all.allData.star += winStar
-      // this.all.allData.allGetStar += winStar
-      // this.all.allData.gameStars.find(g => g.id === GameId.sudoku).getStar += winStar
+      // this.all.allData.cup += winCup
+      // this.all.allData.allGetCup += winCup
+      // this.all.allData.gameCups.find(g => g.id === GameId.sudoku).getCup += winCup
       this.sudokuData.mode[this.sudokuData.nowMode] += 1
     }
     // this.all.save()
-    thisSudoStar.totalTime += this.sudokuData.time
+    thisSudoCup.totalTime += this.sudokuData.time
     // console.log(this.sudokuData.mode[this.sudokuData.nowMode])
     this.pauseShowTime()
     this.sudokuData.time = 0
     this.sudokuData.continue = false
     this.sudokuData.errorArr = []
-    this.sudokuData.star = this.STAR_MAX
+    this.sudokuData.cup = this.STAR_MAX
     this.sudokuShowData.playNumber = 0
     this.sudokuData.sudoArr = []
     this.sudokuShowData.nowGameWin = true
@@ -506,7 +506,7 @@ export class SudokuService {
     this.sudokuData.time = 0
     this.sudokuShowData.nowGameWin = false
     this.sudokuData.errorArr = []
-    this.sudokuData.star = this.STAR_MAX
+    this.sudokuData.cup = this.STAR_MAX
     this.sudokuShowData.playNumber = 0
     this.createBlankEditBoard()
     this.createSudoArr()

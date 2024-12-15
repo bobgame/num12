@@ -1,0 +1,91 @@
+.ui-dialog-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  .dialog-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+  }
+
+  .dialog-content {
+    position: relative;
+    max-width: 90%;
+    min-width: 40vh;
+    background-color: #fff;
+    z-index: 1;
+    padding: 2.4vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+    .dialog-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 5vh;
+      margin-bottom: 1vh;
+
+      .dialog-title {
+        font-size: 2.4vh;
+        font-weight: bold;
+      }
+
+      .dialog-close {
+        cursor: pointer;
+        position: relative;
+        width: 5vh;
+        height: 5vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: -1vh;
+        margin-top: -1vh;
+
+        i {
+          font-size: 2.8vh;
+          color: #333;
+        }
+      }
+    }
+
+
+    .dialog-body {
+      margin-bottom: 2vh;
+    }
+
+    .dialog-footer {
+      display: flex;
+      justify-content: start;
+
+      ::ng-deep {
+        button {
+          margin-right: 2vh;
+          padding: 0.8vh 3vh;
+        }
+
+        .btn-primary {
+          background-color: #2a82e4;
+          color: #fff;
+          border-color: #1463be;
+        }
+
+        .btn-danger {
+          background-color: #dc3545;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

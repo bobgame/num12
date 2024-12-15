@@ -1,22 +1,23 @@
 import { Component, OnInit } from '@angular/core'
 import { CommonModule } from '@angular/common'
-import { LazyDialogRef } from 'ngx-lazy-dialog'
 import { TranslateModule } from '@ngx-translate/core'
 import { LanguageService } from '../../services/language.service'
+import { UiDialogComponent } from '../ui-dialog.component'
+import { GlobalService } from '../../services/global.service'
 interface LangItem {
   lang: string
   name: string
 }
 @Component({
-    selector: 'nm-lang',
-    imports: [CommonModule, TranslateModule],
-    templateUrl: './lang.component.html',
-    styleUrls: ['./lang.component.scss']
+  selector: 'nm-lang',
+  imports: [CommonModule, TranslateModule, UiDialogComponent],
+  templateUrl: './lang.component.html',
+  styleUrls: ['./lang.component.scss'],
 })
 export class LangComponent implements OnInit {
   public myData: {message: string} = {message: ''}
   constructor(
-    private _dialogRef: LazyDialogRef,
+    private g: GlobalService,
     private languageService: LanguageService,
   ) {
   }
@@ -30,8 +31,6 @@ export class LangComponent implements OnInit {
   currentLang = this.langs[0]
 
   ngOnInit() {
-    // getting data
-    this.myData = this._dialogRef.data
     console.log(this.languageService.currentLanguage)
 
     this.currentLang = this.langs.find(langItem => langItem.lang === this.languageService.currentLanguage) || this.langs[0]
@@ -43,10 +42,11 @@ export class LangComponent implements OnInit {
 
   applyLanguage() {
     this.languageService.useLanguage(this.currentLang.lang)
+    this.close()
   }
 
-  close(data?: any) {
-    // closing dialog
-    this._dialogRef.close(data)
+  close() {
+    this.g.show.pop.lang = false
+    this.g.show.pop.langInApp = false
   }
 }

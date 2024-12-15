@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core'
 import { clone, sample } from 'src/app/units/Base'
 import { NumGuessData } from './num-guess'
+import { GlobalService } from 'src/app/common/services/global.service'
 
 @Injectable(
   { providedIn: 'root' },
 )
 
 export class NumGuessService {
-  constructor() {
+  constructor(private g: GlobalService) {
     console.log('SliderService constructor')
   }
 
@@ -16,14 +17,14 @@ export class NumGuessService {
   gameResult = {
     isOver: false,
     isWin: false,
-    star: 0,
+    cup: 0,
     steps: 0,
     htmlMessage: '',
   }
 
   numGuessDataBase: NumGuessData = {
     steps: 0,
-    star: 0,
+    cup: 0,
     count: 0,
     histories: [],
     a0b0: [],
@@ -34,6 +35,7 @@ export class NumGuessService {
   numGuessData = clone(this.numGuessDataBase)
 
   newGame() {
+    this.numGuessData = clone(this.numGuessDataBase)
     this.numGuessData.result = []
     let numBaseCopy = clone(this.numBase)
     for (let i = 0; i < this.numGuessData.length; i++) {
@@ -66,27 +68,32 @@ export class NumGuessService {
       this.numGuessData.a0b0.push(...guess)
     }
     if (this.numGuessData.steps < this.numGuessData.length * 1.3) {
-      this.numGuessData.star = 2
+      this.numGuessData.cup = 2
     } else {
-      this.numGuessData.star = 1
+      this.numGuessData.cup = 1
     }
     if (a === this.numGuessData.length) {
       this.gameResult.isOver = true
       this.gameResult.isWin = true
       this.gameResult.steps = this.numGuessData.steps
+
+      this.g.gameData.gameList.find((g) => g.pageName === this.g.show.pageName)!.cup += this.numGuessData.cup
+
       this.gameResult.htmlMessage = `
-      <h4 class="color-green">You Win!</h4>
-      <p>Used guess steps: ${this.numGuessData.steps}</p>
-      <p>The answer is: <span class="color-blue">${this.numGuessData.result.join('')}</span></p>
-      <p>You got <span class="color-green">${this.numGuessData.star}</span> star!, Keep trying! Hope to see you again!</p>
+      <h4 class="color-green">${this.g.instant('guess.gameover.youWin')}</h4>
+      <p>${this.g.instant('guess.gameover.useStep')}${this.numGuessData.steps}</p>
+      <p>${this.g.instant('guess.gameover.answerIs')}<span class="color-blue">${this.numGuessData.result.join('')}</span></p>
+      <p>${this.g.instant('guess.gameover.gotCup')}<span class="color-green">${this.numGuessData.cup}</p>
+      <p>${this.g.instant('guess.gameover.keepTry')}</p>
       `
     } else if (this.numGuessData.steps >= this.numGuessData.length * 2) {
       this.gameResult.isOver = true
       this.gameResult.isWin = false
       this.gameResult.steps = this.numGuessData.steps
       this.gameResult.htmlMessage = `
-      <h4 class="color-orange">You Lose!</h4>
-      <p>The answer is: <span class="color-blue">${this.numGuessData.result.join('')}</span>, Keep trying! Hope you're right next time!</p>
+      <h4 class="color-orange">${this.g.instant('guess.gameover.youLose')}</h4>
+      <p>${this.g.instant('guess.gameover.correctAnswerIs')}<span class="color-blue">${this.numGuessData.result.join('')}</span></p>
+      <p>${this.g.instant('guess.gameover.keepTry')}</p>
       `
     }
   }

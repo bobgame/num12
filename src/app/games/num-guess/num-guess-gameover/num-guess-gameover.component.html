@@ -1,5 +1,8 @@
-<h3>Game over!</h3>
-<div class="game-over-content mb-3">
-  <div [innerHTML]="myData.message"></div>
-</div>
-<button (click)="close()">{{ 'common.close' | translate }}</button>
+<nm-ui-dialog [title]="'common.gameOver' | translate" (close)="close()" [maskClickable]="false">
+  <div class="game-over-content mb-3">
+    <div [innerHTML]="numGuessService.gameResult.htmlMessage"></div>
+  </div>
+  <footer>
+    <button (click)="close()">{{ 'common.newGame' | translate }}</button>
+  </footer>
+</nm-ui-dialog>

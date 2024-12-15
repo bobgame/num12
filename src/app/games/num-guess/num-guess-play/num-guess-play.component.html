@@ -1,17 +1,19 @@
 <div class="num-guess-play-container" #numGuessPlayContainer>
-  <nm-ui-header title="Number Guess" [backEnabled]="true" (back)="g.navigate()"></nm-ui-header>
+  <nm-ui-header [title]="'gameName.numGuess' | translate" [backEnabled]="true" (back)="g.navigate()"></nm-ui-header>
   <div class="play-con-center">
     <div class="play-con">
-      <div class="score-con">
-        <div class="steps">
-          {{ "common.leftSteps" | translate }}:
-          <span>{{ numGuessService.numGuessData.steps }}</span>
-        </div>
-        <div class="steps">
-          <i class="nwicon nwi-star-full"></i>:
-          <span>{{ numGuessService.numGuessData.star }}</span>
-        </div>
-      </div>
+      <nm-ui-status-bar (more)="showMore()">
+        <left-content>
+          <div class="steps">
+            <i class="nwicon nwi-step mr-half"></i><span>{{ numGuessService.numGuessData.steps }}</span>
+          </div>
+        </left-content>
+        <!-- <center-content>
+          <div class="steps">
+            <i class="nwicon nwi-cup"></i>:<span>{{ numGuessService.numGuessData.cup }}</span>
+          </div>
+        </center-content> -->
+      </nm-ui-status-bar>
       <div class="game-con-center" #gameConCenter>
         <div class="num-guess-con">
           <div class="result-con">
@@ -66,3 +68,4 @@
     </div>
   </div>
 </div>
+<nm-num-guess-gameover *ngIf="numGuessService.gameResult.isOver"></nm-num-guess-gameover>

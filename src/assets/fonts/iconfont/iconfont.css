@@ -1,7 +1,8 @@
 @font-face {
   font-family: "nwicon"; /* Project id 1043435 */
-  src: url("iconfont.woff2") format("woff2"),
-    url("iconfont.woff") format("woff"), url("iconfont.ttf") format("truetype");
+  src: url('iconfont.woff2?t=1734240620441') format('woff2'),
+       url('iconfont.woff?t=1734240620441') format('woff'),
+       url('iconfont.ttf?t=1734240620441') format('truetype');
 }
 
 .nwicon {
@@ -10,6 +11,18 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.nwi-more:before {
+  content: "\e609";
+}
+
+.nwi-cup:before {
+  content: "\e93e";
+}
+
+.nwi-step:before {
+  content: "\e93f";
 }
 
 .nwi-language-sharp:before {
@@ -25,11 +38,11 @@
 }
 
 .nwi-arrow-left:before {
-  content: "\e601";
+  content: "\e941";
 }
 
-.nwi-more:before {
-  content: "\e93d";
+.nwi-arrow-right:before {
+  content: "\e601";
 }
 
 .nwi-pause:before {
@@ -38,6 +51,10 @@
 
 .nwi-continue:before {
   content: "\e63b";
+}
+
+.nwi-close:before {
+  content: "\e942";
 }
 
 .nwi-new:before {
@@ -91,3 +108,4 @@
 .nwi-mark:before {
   content: "\e62f";
 }
+

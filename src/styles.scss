@@ -1,5 +1,4 @@
 @use 'assets/fonts/iconfont/iconfont.css' as *;
-@use 'node_modules/ngx-lazy-dialog/styles/ngx-lazy-dialog.scss' as *;
 @use './style/base.scss' as *;
 @use './app/app.theme.scss' as *;
 
@@ -42,9 +41,19 @@ button {
   cursor: pointer;
   font-family: inherit;
   border: 2px solid #666;
-  padding: 0.8vh 2vh;
-  border-radius: 100px;
+  padding: 0.8vh 2.8vh;
+  border-radius: 0;
   font-size: 1.6vh;
+}
+
+body {
+  .ng-toggle-switch-core {
+    border-radius: 0 !important;
+  }
+
+  .ng-toggle-switch-button {
+    border-radius: 0 !important;
+  }
 }
 
 .text-center {
@@ -120,11 +129,11 @@ h3 {
   margin-bottom: 10px;
 }
 
-.short-lang-zh {
-  p {
-    text-indent: 2em;
-  }
-}
+// .short-lang-zh {
+//   p {
+//     // text-indent: 2em;
+//   }
+// }
 
 .container {
   width: 100%;
@@ -142,21 +151,6 @@ h3 {
 
     .play-con {
       width: 100%;
-    }
-
-    .score-con {
-      position: relative;
-      width: 100%;
-      height: 4vh;
-      padding: 0 2vh;
-      margin-bottom: 2vh;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      span {
-        color: #dd6b0d;
-      }
     }
 
     .control-con {
@@ -185,46 +179,6 @@ h3 {
       // width: 50vh;
       height: calc(100vh - 6vh - #{$webContainPadding} * 4);
 
-      .score-con {
-        // width: 50vh;
-      }
-    }
-  }
-}
-
-:root {
-  --dialog-close-size: 32px
-}
-
-.lazy-dialog-root .lazy-dialog-container .lazy-dialog-close {
-  top: 0;
-  right: 14px;
-  padding: 10px;
-}
-
-.dialog-content-common {
-  // font-family: "segoe ui", serif;
-  width: 400px;
-  max-width: 100%;
-
-  &[size=md] {
-    width: 600px;
-  }
-
-  &[size=lg] {
-    width: 800px;
-  }
-
-  .dialog-content {
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-  }
-
-  .button-con {
-    display: flex;
-
-    button {
-      margin-right: 20px;
     }
   }
 }

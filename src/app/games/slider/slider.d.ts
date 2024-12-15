@@ -10,6 +10,6 @@ export interface SliderData {
   maxNum: number
   steps: number
   score: number
-  star: number
+  cup: number
   numCounts: {num: number, count: number}[]
 }

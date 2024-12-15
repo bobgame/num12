@@ -1,0 +1,47 @@
+.status-bar-container {
+  position: relative;
+  width: 100%;
+  height: 6vh;
+  padding: 0 2vh;
+  margin-bottom: 1vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .inner-content {
+    width: 33%;
+    height: 6vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .center-content {
+    height: 6vh;
+    justify-content: center;
+  }
+
+  .right-content {
+    justify-content: flex-end;
+
+    .btn-more {
+      width: 5vh;
+      height: 5vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #f0f0f0;
+      }
+
+      i {
+        font-size: 2.8vh;
+      }
+    }
+  }
+
+  ::ng-deep span {
+    color: #dd6b0d;
+  }
+}

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core'
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnDestroy, OnInit } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { UiHeaderComponent } from 'src/app/common/ui/ui-header/ui-header.component'
 import { SudokuService } from '../sudoku.service'
@@ -6,12 +6,15 @@ import { SudoPageEnum } from '../enum/sudoku-page.enum'
 import { SudoCell } from '../sudoku'
 import { SudokuNumberComponent } from './sudoku-number/sudoku-number.component'
 import { GlobalService } from 'src/app/common/services/global.service'
+import { TranslateModule } from '@ngx-translate/core'
+import { UiStatusBarComponent } from 'src/app/common/ui/ui-status-bar/ui-status-bar.component'
 
 @Component({
-    selector: 'nm-sudoku-play',
-    imports: [CommonModule, UiHeaderComponent, SudokuNumberComponent],
-    templateUrl: './sudoku-play.component.html',
-    styleUrls: ['./sudoku-play.component.scss']
+  selector: 'nm-sudoku-play',
+  templateUrl: './sudoku-play.component.html',
+  styleUrls: ['./sudoku-play.component.scss'],
+  imports: [CommonModule, TranslateModule, UiHeaderComponent, UiStatusBarComponent, SudokuNumberComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class SudokuPlayComponent implements OnInit, OnDestroy {
   constructor(
@@ -27,6 +30,8 @@ export class SudokuPlayComponent implements OnInit, OnDestroy {
   goPageStatus = true
   continueButton = false
   toolsButtonShow = 1
+  isShowMore = false
+
 
   ngOnInit() {
     this.initNumbers()
@@ -52,6 +57,14 @@ export class SudokuPlayComponent implements OnInit, OnDestroy {
         this.cellArr.push(cell)
       }
     }
+  }
+
+  showMore() {
+    this.isShowMore = true
+  }
+
+  hideMore() {
+    this.isShowMore = false
   }
 
   initSudo() {

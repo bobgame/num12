@@ -12,7 +12,7 @@ import { SudoItem } from '../../sudoku.d'
 export class SudokuNumberComponent {
 
   numArr: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-  starArr: Array<number> = []
+  cupArr: Array<number> = []
 
   @Input() sudoItem: SudoItem = {
     id: 0,

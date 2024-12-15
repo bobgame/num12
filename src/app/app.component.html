@@ -8,7 +8,7 @@
       </div>
     </div>
   </div>
-  <div>
+  <div class="app-main">
     <div class="app-container" *ngIf="!g.show.onlyWeb">
       @switch (g.show.pageName) { @case (PageName.home) {
       <nm-home></nm-home>
@@ -26,7 +26,10 @@
       <nm-sudoku></nm-sudoku>
       } }
       <nm-loading *ngIf="g.show.pop.loading"></nm-loading>
-      <nm-star *ngIf="g.show.pop.star"></nm-star>
+      <nm-cup *ngIf="g.show.pop.cup"></nm-cup>
+      <nm-about *ngIf="g.show.pop.about"></nm-about>
+      <nm-settings *ngIf="g.show.pop.settings"></nm-settings>
+      <nm-lang *ngIf="g.show.pop.lang"></nm-lang>
     </div>
   </div>
 </div>

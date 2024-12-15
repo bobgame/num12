@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common'
-import { Component, OnInit } from '@angular/core'
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core'
 import { UiHeaderComponent } from 'src/app/common/ui/ui-header/ui-header.component'
 import { SliderService } from '../slider.service'
 import { SliderItem } from '../slider'
@@ -10,18 +10,21 @@ import { SliderScoreScale, baseScore } from '../slider.const'
 import { cloneDeep, flatten, intersectionWith, isEqual } from 'lodash-es'
 import { TranslateModule } from '@ngx-translate/core'
 import { UiControlComponent } from 'src/app/common/ui/ui-control/ui-control.component'
+import { UiStatusBarComponent } from 'src/app/common/ui/ui-status-bar/ui-status-bar.component'
 
 @Component({
   selector: 'nm-slider-play',
   templateUrl: './slider-play.component.html',
   styleUrls: ['./slider-play.component.scss'],
-  imports: [CommonModule, UiHeaderComponent, UiControlComponent, TranslateModule],
+  imports: [CommonModule, UiHeaderComponent, UiControlComponent, UiStatusBarComponent, TranslateModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class SliderPlayComponent implements OnInit {
   constructor(public sliderService: SliderService, public g: GlobalService) {}
 
   moveOneTime = 300
   isSliding = false
+  isShowMore = false
 
   ngOnInit() {
     console.log('SliderPlayComponent ngOnInit')
@@ -29,6 +32,13 @@ export class SliderPlayComponent implements OnInit {
 
   test() {
     this.startSlide()
+  }
+  showMore() {
+    this.isShowMore = true
+  }
+
+  hideMore() {
+    this.isShowMore = false
   }
 
   onSwipeLeft(e: Event) {
@@ -248,26 +258,26 @@ export class SliderPlayComponent implements OnInit {
     }
     this.sliderService.sliderData.steps += addStep
     this.sliderService.sliderData.score += score
-    const star = this.checkStar(this.sliderService.sliderData.score)
-    if (star > this.sliderService.sliderData.star) {
-      this.sliderService.sliderData.star = star
+    const cup = this.checkCup(this.sliderService.sliderData.score)
+    if (cup > this.sliderService.sliderData.cup) {
+      this.sliderService.sliderData.cup = cup
     }
   }
 
-  checkStar(score: number) {
-    let star = 0
+  checkCup(score: number) {
+    let cup = 0
     if (score >= 20000) {
-      star = 5
+      cup = 5
     } else if (score >= 10000) {
-      star = 4
+      cup = 4
     } else if (score >= 5000) {
-      star = 3
+      cup = 3
     } else if (score >= 3000) {
-      star = 2
+      cup = 2
     } else if (score >= 1000) {
-      star = 1
+      cup = 1
     }
-    return star
+    return cup
   }
 
   gameover() {

@@ -2,7 +2,7 @@ export enum SudoPageEnum {
   Home = 'Home',
   Play = 'Play',
   NewGame = 'NewGame',
-  Stars = 'Stars',
+  Cups = 'Cups',
   Settings = 'Settings',
   Help = 'Help',
 }

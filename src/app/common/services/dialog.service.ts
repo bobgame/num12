@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { LazyDialogConfig, LazyDialogService } from 'ngx-lazy-dialog'
+import { GlobalService } from './global.service'
 type PopupItem = 'settings' | 'favorite' | 'about' | 'lang'
 interface BottomIcon {
   id: number
@@ -12,7 +12,7 @@ interface BottomIcon {
 export class DialogService {
 
   constructor(
-    private lazyDialogService: LazyDialogService,
+    private g: GlobalService,
   ) { }
 
   bottomIcons: BottomIcon[] = [
@@ -25,65 +25,33 @@ export class DialogService {
   openDialog(popup: PopupItem) {
     switch (popup) {
       case 'settings':
-        this.openSettingsDialog()
+        this.g.show.pop.settings = true
         break
       case 'lang':
-        this.openLangDialog()
+        this.g.show.pop.lang = true
         break
       case 'about':
-        this.openAboutDialog()
+        this.g.show.pop.about = true
         break
       default:
         break
     }
-    // this.g.toast(popup)
   }
 
-  async openSettingsDialog() {
-    const component = await import('../dialogs/settings/settings.component').then(m => m.SettingsComponent)
-    const data = { message: '' }
-
-    const config: LazyDialogConfig = {
-      closeOnBackdropClick: true,
-      closeButton: true,
-      customClasses: 'my-custom-class',
+  openInAppDialog(popup: PopupItem) {
+    switch (popup) {
+      case 'settings':
+        this.g.show.pop.settingsInApp = true
+        break
+      case 'lang':
+        this.g.show.pop.langInApp = true
+        break
+      case 'about':
+        this.g.show.pop.aboutInApp = true
+        break
+      default:
+        break
     }
-
-    const dialog = await this.lazyDialogService.create({component, data, config})
-    dialog.onClose().then((output) => {
-      console.log(output)
-    })
   }
 
-  async openLangDialog() {
-    const component = await import('../dialogs/lang/lang.component').then(m => m.LangComponent)
-    const data = { message: '' }
-
-    const config: LazyDialogConfig = {
-      closeOnBackdropClick: true,
-      closeButton: true,
-      customClasses: 'my-custom-class',
-    }
-
-    const dialog = await this.lazyDialogService.create({component, data, config})
-    dialog.onClose().then((output) => {
-      console.log(output)
-    })
-  }
-
-  async openAboutDialog() {
-    const component = await import('../dialogs/about/about.component').then(m => m.AboutComponent)
-    const data = { message: '' }
-
-    const config: LazyDialogConfig = {
-      closeOnBackdropClick: true,
-      closeButton: true,
-      customClasses: 'my-custom-class',
-    }
-
-    const dialog = await this.lazyDialogService.create({component, data, config})
-    dialog.onClose().then((output) => {
-      console.log(output)
-    })
-  }
 }

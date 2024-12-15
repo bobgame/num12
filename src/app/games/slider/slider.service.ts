@@ -16,7 +16,7 @@ export class SliderService {
     maxNum: 4,
     steps: 20,
     score: 0,
-    star: 0,
+    cup: 0,
     numCounts: [],
   }
 

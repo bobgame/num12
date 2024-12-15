@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common'
-import { Component, HostListener, OnInit } from '@angular/core'
+import { Component, CUSTOM_ELEMENTS_SCHEMA, HostListener, OnInit } from '@angular/core'
 import { NPuzzleService } from '../n-puzzle.service'
 import { UiHeaderComponent } from 'src/app/common/ui/ui-header/ui-header.component'
 import { NPuzzleItem } from '../n-puzzle'
@@ -7,12 +7,14 @@ import { GlobalService } from 'src/app/common/services/global.service'
 import { TranslateModule } from '@ngx-translate/core'
 import { UiControlComponent } from 'src/app/common/ui/ui-control/ui-control.component'
 import { BaseDirection } from 'src/app/common/types/base'
+import { UiStatusBarComponent } from 'src/app/common/ui/ui-status-bar/ui-status-bar.component'
 
 @Component({
   selector: 'nm-n-puzzle-play',
   templateUrl: './n-puzzle-play.component.html',
   styleUrls: ['./n-puzzle-play.component.scss'],
-  imports: [CommonModule, UiHeaderComponent, UiControlComponent, TranslateModule],
+  imports: [CommonModule, UiHeaderComponent, UiControlComponent, UiStatusBarComponent, TranslateModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class NPuzzlePlayComponent implements OnInit {
 
@@ -22,10 +24,18 @@ export class NPuzzlePlayComponent implements OnInit {
   ) {
     console.log('NPuzzlePlayComponent constructor called')
   }
+  isShowMore = false
 
   ngOnInit() {
     this.nPuzzleService.initNPuzzle()
     console.log('NPuzzlePlayComponent ngOnInit called')
+  }
+  showMore() {
+    this.isShowMore = true
+  }
+
+  hideMore() {
+    this.isShowMore = false
   }
 
   nPuzzleItemClicked(item: NPuzzleItem) {

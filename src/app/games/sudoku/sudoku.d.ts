@@ -14,7 +14,7 @@ export class SudokuShowData {
   showTime: string
   pauseTime: boolean
   nowGameWin: boolean
-  winStar: number
+  winCup: number
 }
 export class SudoCell {
   number: number
@@ -43,27 +43,27 @@ export class SudokuData {
   errorArr: number[]
   nowHardModeName: string
   time: number
-  star: number
+  cup: number
   nowMode: number
   nowLv: number
   mode: number[]
-  allStars: AllStar[]
+  allCups: AllCup[]
 }
-export class AllStar {
+export class AllCup {
   mode: number
-  starNum: number
+  cupNum: number
   totalTime: number
-  levelStars: LevelStar[]
+  levelCups: LevelCup[]
 }
-export class LevelStar {
+export class LevelCup {
   lv: number
-  starNum: number
+  cupNum: number
   isActive?: boolean
-  isHideStar?: boolean
+  isHideCup?: boolean
 }
-export class HardAndStar {
+export class HardAndCup {
   modeName: string
   lvText: string
-  starNum: number
+  cupNum: number
   totalTime: string
 }

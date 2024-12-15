@@ -12,7 +12,7 @@ export class N2048Service {
   n2048DataBase = {
     steps: 0,
     score: 0,
-    star: 0,
+    cup: 0,
     bestScore: 0,
     maxPower: 4,
     gameOver: false,

@@ -2,11 +2,15 @@
   <nm-ui-header title="{{'gameName.n2048' | translate}}" [backEnabled]="true" (back)="g.navigate()"></nm-ui-header>
   <div class="play-con-center">
     <div class="play-con">
-      <div class="score-con">
-        <div class="steps">{{'common.steps' | translate}}: <span>{{n2048Service.n2048Data.steps}}</span></div>
-        <div class="step-item star"><i class="nwicon nwi-star-full"></i>: <span>{{n2048Service.n2048Data.star}}</span>
-        </div>
-      </div>
+      <nm-ui-status-bar (more)="showMore()">
+        <left-content>
+          <div class="steps"><i class="nwicon nwi-step mr-half"></i><span>{{n2048Service.n2048Data.steps}}</span></div>
+        </left-content>
+        <center-content>
+          <div class="step-item cup"><i class="nwicon nwi-cup mr-half"></i><span>{{n2048Service.n2048Data.cup}}</span>
+          </div>
+        </center-content>
+      </nm-ui-status-bar>
       <div class="game-con-center" #n2048PlayGameConCenter [style.height.px]="n2048PlayGameConCenter.offsetWidth"
         (swipeleft)="onSwipeLeft()" (swiperight)="onSwipeRight()" (swipeup)="onSwipeUp()" (swipedown)="onSwipeDown()">
         <div class="num-bg-con">

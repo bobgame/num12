@@ -6,6 +6,8 @@
   },
   "eslint.format.enable": true,
   "cSpell.words": [
-    "Jian"
+    "Jian",
+    "swipeleft",
+    "swiperight"
   ],
 }

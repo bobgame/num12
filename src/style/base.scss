@@ -18,8 +18,36 @@
   color: #ca600a;
 }
 
+.mb-half {
+  margin-bottom: 0.5vh;
+}
+
+.mr-half {
+  margin-right: 0.5vh;
+}
+
+.ml-half {
+  margin-left: 0.5vh;
+}
+
+.mt-half {
+  margin-top: 0.5vh;
+}
+
 @for $i from 1 through 10 {
   .mb-#{$i} {
     margin-bottom: #{$i}vh;
+  }
+
+  .mr-#{$i} {
+    margin-right: #{$i}vh;
+  }
+
+  .ml-#{$i} {
+    margin-left: #{$i}vh;
+  }
+
+  .mt-#{$i} {
+    margin-top: #{$i}vh;
   }
 }

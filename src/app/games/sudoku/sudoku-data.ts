@@ -16,5 +16,5 @@ export const SUDOKU_SHOW_DATA: SudokuShowData = {
   showTime: '00:00',
   pauseTime: false,
   nowGameWin: false,
-  winStar: 0,
+  winCup: 0,
 }

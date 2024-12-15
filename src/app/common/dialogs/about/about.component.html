@@ -1,11 +1,14 @@
-<div class="dialog-content-common">
-  <h3>{{'more.about.title' | translate}}</h3>
-  <div class="dialog-content">
-    <p>{{'more.about.version' | translate}}: {{ appConfig.version }}</p>
-    <p>{{'more.about.author' | translate}}</p>
-    <p>{{'more.about.desc1' | translate}}</p>
+<nm-ui-dialog (clickClose)="close()" [title]="'more.about.title' | translate">
+  <div class="dialog-content-about">
+    <div class="about-body">
+      <p>{{'more.about.version' | translate}}{{ appConfig.version }}</p>
+      <p>{{'more.about.author' | translate}}</p>
+      <p>{{'more.about.desc1' | translate}}</p>
+    </div>
   </div>
-  <div class="button-con">
-    <button (click)="close()">{{'common.close' | translate}}</button>
-  </div>
-</div>
+  <footer>
+    <div class="button-con">
+      <button (click)="close()">{{'common.close' | translate}}</button>
+    </div>
+  </footer>
+</nm-ui-dialog>

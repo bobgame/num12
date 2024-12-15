@@ -4,12 +4,12 @@ export interface GameListItem {
   id: number,
   name: GameName,
   pageName: PageName,
-  star: number,
+  cup: number,
   highScore: number,
 }
 
 export interface GameData {
-  allStar: number,
+  allCup: number,
   gameList: GameListItem[],
   gameHistory: {
     slider: {
@@ -23,8 +23,14 @@ export interface GameShow {
   isHP: boolean,
   onlyWeb: boolean,
   pop: {
-    star: boolean,
+    cup: boolean,
     loading: boolean,
+    settings: boolean,
+    lang: boolean,
+    about: boolean,
+    settingsInApp: boolean,
+    langInApp: boolean,
+    aboutInApp: boolean,
     [key: string]: boolean,
   }
 }

@@ -1,23 +1,18 @@
 <div class="sudoku-play-container">
-  <nm-ui-header title="sudoku" [backEnabled]="true" (back)="g.navigate()"></nm-ui-header>
+  <nm-ui-header [title]="'gameName.sudoku' | translate" [backEnabled]="true" (back)="g.navigate()"></nm-ui-header>
   <div class="play-con-center">
     <div class="play-con">
-      <div class="score-con">
-        <!-- <div class="steps">Steps: <span>{{sudokuService.sudokuData.steps}}</span></div>
-        <div class="steps">Score: <span>{{sudokuService.sudokuData.score}}</span></div>
-        <div class="steps">Star: <span>{{sudokuService.sudokuData.star}}</span></div> -->
-        <!-- <div class="hard-mode">{{sudokuService.sudokuData.nowHardModeName | translate}}
-          Lv{{sudokuService.sudokuData.nowLv}}</div> -->
-        <div class="star-con flex-center">
-          <i class="nwicon nwi-star-full star-item color-red" *ngFor="let star of sudokuService.starArr"
-            [hidden]="star > sudokuService.sudokuData.star"></i>
-          <i class="nwicon nwi-star-empty star-item color-red" *ngFor="let star of sudokuService.starArr"
-            [hidden]="star <= sudokuService.sudokuData.star"></i>
-        </div>
-        <div class="time" (click)="clickPlayOrPauseBtn()">
-          {{sudokuService.sudokuShowData.showTime}} <i class="nwicon nwi-pause pl-2"></i>
-        </div>
-      </div>
+      <nm-ui-status-bar (more)="showMore()">
+        <left-content>
+          <div class="hard-mode">{{sudokuService.sudokuData.nowHardModeName | translate}}
+            Lv{{sudokuService.sudokuData.nowLv}}</div>
+        </left-content>
+        <center-content>
+          <div class="time" (click)="clickPlayOrPauseBtn()">
+            {{sudokuService.sudokuShowData.showTime}} <i class="nwicon nwi-pause ml-half"></i>
+          </div>
+        </center-content>
+      </nm-ui-status-bar>
       <div class="game-con-center" #gameConCenter [style.height.px]="gameConCenter.offsetWidth">
         <div class="number-content" [style.height.px]="gameConCenter.offsetWidth">
           <div *ngFor="let cell of cellArr; let i = index" class="number-item" [ngClass]="{

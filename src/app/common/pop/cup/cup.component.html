@@ -1,0 +1,23 @@
+<div class="cup-container" tabindex="-1">
+  <h3 class="cup-container-title text-center">{{ 'cups.allCups' | translate }}</h3>
+  <div class="all-cup-con">
+    <div class="title">{{ 'cups.total' | translate }} </div>
+    <div class="cup">
+      <i class="nwicon nwi-cup"></i>
+      <span>{{ ' ' + g.gameData.allCup }}</span>
+    </div>
+  </div>
+  <div class="game-cups-con">
+    <h4 class="cup-container-title text-center">{{ 'cups.gameCups' | translate }}</h4>
+    <div class="all-cup-con" *ngFor="let game of g.gameData.gameList">
+      <div class="title">{{ game.name | translate }}</div>
+      <div class="cup">
+        <i class="nwicon nwi-cup"></i>
+        <span>{{ ' ' + game.cup }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="close-con text-center">
+    <button class="btn close-btn" (click)="close()">{{ 'common.close' | translate }}</button>
+  </div>
+</div>

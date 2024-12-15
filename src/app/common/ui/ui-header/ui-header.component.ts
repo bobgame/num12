@@ -26,8 +26,8 @@ export class UiHeaderComponent {
     }, 100)
   }
 
-  openStarPop() {
-    this.g.show.pop.star = true
+  openCupPop() {
+    this.g.show.pop.cup = true
   }
 
 }

@@ -1,0 +1,12 @@
+<div class="status-bar-container">
+  <div class="inner-content left-content">
+    <ng-content select="left-content"></ng-content>
+  </div>
+  <div class="inner-content center-content">
+    <ng-content select="center-content"></ng-content>
+  </div>
+  <div class="inner-content right-content">
+    <div class="btn-more" (click)="more()"><i class="nwicon nwi-more"></i></div>
+    <ng-content select="right-content"></ng-content>
+  </div>
+</div>

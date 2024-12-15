@@ -1,21 +1,20 @@
 import { Component, OnInit } from '@angular/core'
 import { CommonModule } from '@angular/common'
-import { LazyDialogRef } from 'ngx-lazy-dialog'
 import { TranslateModule } from '@ngx-translate/core'
 import { NgToggleModule } from 'ng-toggle-button'
 import { GlobalService } from '../../services/global.service'
 import { SettingsEnum } from '../../data/settings'
+import { UiDialogComponent } from '../ui-dialog.component'
 
 @Component({
   selector: 'nm-settings',
-  imports: [CommonModule, TranslateModule, NgToggleModule],
+  imports: [CommonModule, TranslateModule, NgToggleModule, UiDialogComponent],
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.scss'],
 })
 export class SettingsComponent implements OnInit {
   public myData: {message: string} = {message: ''}
   constructor(
-    private _dialogRef: LazyDialogRef,
     private g: GlobalService,
   ) {
   }
@@ -25,8 +24,6 @@ export class SettingsComponent implements OnInit {
   }
 
   ngOnInit() {
-    // getting data
-    this.myData = this._dialogRef.data
     this.settings.onlyGame = this.g.getSetting(SettingsEnum.OnlyGame).value === true
   }
 
@@ -35,11 +32,12 @@ export class SettingsComponent implements OnInit {
   }
 
   save() {
-    this._dialogRef.close('saved')
+    console.log('saved')
+    this.close()
   }
 
-  close(data?: any) {
-    // closing dialog
-    this._dialogRef.close(data)
+  close() {
+    this.g.show.pop.settings = false
+    this.g.show.pop.settingsInApp = false
   }
 }

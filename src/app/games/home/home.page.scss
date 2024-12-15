@@ -73,7 +73,7 @@
           text-align: left;
         }
 
-        .star {
+        .cup {
           // width: 10vh;
           color: #d64f0c;
           font-size: 1.4vh;
@@ -81,6 +81,7 @@
           text-align: left;
 
           i {
+            margin-right: 0.5vh;
             font-size: 1.4vh;
           }
         }
@@ -101,12 +102,13 @@
 
       }
 
-      .all-stars {
+      .all-cups {
         width: 100%;
         color: #d64f0c;
         font-size: 2.4vh;
         text-align: center;
-        margin-bottom: 1vh;
+        margin-bottom: 2vh;
+        cursor: pointer;
         // margin-right: 2vh;
       }
 
