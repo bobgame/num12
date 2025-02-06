@@ -1,0 +1,192 @@
+{
+  "common": {
+    "title": "Num12",
+    "ok": "Ok",
+    "back": "Back",
+    "save": "Save",
+    "cancel": "Cancel",
+    "close": "Close",
+    "apply": "Apply",
+    "home": "Home",
+    "play": "Play",
+    "newGame": "New game",
+    "menu": "Menu",
+    "continue": "Continue",
+    "pause": "Pause",
+    "settings": "Settings",
+    "cups": "Cups",
+    "help": "Help",
+    "gameMenu": "Game menu",
+    "hardChoose": "Hard choose",
+    "steps": "steps",
+    "leftSteps": "Left steps",
+    "score": "Score",
+    "times": "Times",
+    "moreComing": "More coming",
+    "aboutAndContact": "About & Contact",
+    "gameOver": "Game over",
+    "continueOrMenu": "Continue or back to menu?",
+    "got": "Got",
+    "starter": "Starter",
+    "normal": "Normal",
+    "master": "Master"
+  },
+  "gameName": {
+    "slider": "Slider",
+    "nPuzzle": "N-Puzzle",
+    "n2048": "2048",
+    "numGuess": "Number Guess",
+    "sudoku": "Sudoku",
+    "numBattle": "Num Battle"
+  },
+  "k": {
+    "title": "NUM12",
+    "nav": {
+      "dashboard": "Home",
+      "introduce": "Introduction",
+      "history": "History",
+      "world": "The World",
+      "games": "Num Games"
+    },
+    "dashboard": {
+      "subtitle": "Enjoy the creative world of numbers through fun play and embark on a fantasy journey."
+    },
+    "introduce": {
+      "title": "Introduction to Numbers",
+      "descriptions": [
+        "There are several kinds of numbers. Arabic numerals are the most common ones. There are also Roman numerals, Chinese counting rod numerals, ancient Egyptian hieroglyphic numerals, ancient Babylonian cuneiform numerals and so on.",
+        "Numbers are written symbols used to represent quantities. Different numeral systems can use the same numbers."
+      ],
+      "categories": [
+        {
+          "title": "Arabic Numerals",
+          "texts": [
+            "<b>Basic Symbols and Rules:</b> Arabic numerals consist of ten basic symbols: 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9. They adopt the decimal counting system, where the position of each digit represents a different value, which is known as the 'place value system'. For example, in the number '123', from right to left, the digit '3' in the units place represents three ones, the digit '2' in the tens place represents two tens, and the digit '1' in the hundreds place represents one hundred. Numbers represent various values through the combination rules of addition and multiplication. For example, simple addition operations like '2 + 3 = 5' and multiplication operations like '3×4 = 12' are all based on these basic digital symbols and rules.",
+            "<b>Application Scenarios:</b> Arabic numerals are currently the most commonly used number system in the world. They are widely used in all aspects of daily life, such as calculating the amount of shopping, recording time (like the year 2024), counting the population, representing phone numbers, measuring lengths (like 3.5 meters), and so on. In the field of scientific research, whether it is basic disciplines such as mathematics, physics, chemistry, or applied disciplines such as computer science and engineering, Arabic numerals are essential tools for recording experimental data, calculating formula results, and so on. In the financial field, Arabic numerals are used to record various financial data such as account balances, stock prices, and exchange rates, and they are the basic digital representation method for global financial transactions."
+          ]
+        },
+        {
+          "title": "Roman Numerals",
+          "texts": [
+            "<b>Basic Symbols and Rules:</b> Roman numerals use combinations of letters to represent numbers. The basic symbols include I (1), V (5), X (10), L (50), C (100), D (500), M (1000). Their representation rules have a certain logic of addition and subtraction operations. For example, when the same digits are written consecutively, the number represented is equal to the sum of these digits, such as III = 3; when a smaller digit is on the right of a larger digit, the number represented is equal to the sum of these digits, such as VIII = 8; when a smaller digit (limited to I, X, and C) is on the left of a larger digit, the number represented is equal to the larger number minus the smaller number, such as IV = 4, IX = 9.",
+            "<b>Application Scenarios:</b> Roman numerals are often used in the field of architecture to mark the construction years of buildings, the numbers of commemorative buildings, and so on. For example, the construction times represented by Roman numerals are engraved on the walls of some ancient European castles and churches. On the dials of clocks, the hour scales also often use Roman numerals, giving a classical and solemn feeling."
+          ]
+        },
+        {
+          "title": "Chinese Counting Rod Numerals",
+          "texts": [
+            "<b>Representation Method:</b> Counting rods were a counting tool in ancient China. Counting rod numerals were represented by the vertical and horizontal arrangements of counting rods. The digits in the units place were represented by the vertical form, the digits in the tens place were represented by the horizontal form, the digits in the hundreds place were represented by the vertical form, the digits in the thousands place were represented by the horizontal form, and so on. For example, the number 6 could be represented by ' 丄 ' (vertical form), and the number 7 could be represented by ' 丅 ' (vertical form).",
+            "<b>Application Scenarios:</b> In ancient China, counting rod numerals played a crucial role in fields such as commercial transactions, astronomical calendar calculations, and engineering construction. In commercial activities, merchants could use counting rods to quickly calculate the prices and quantities of goods. In the astronomical field, astronomers used counting rods to record and calculate astronomical data, such as calculating the positions of celestial bodies, the times of solar and lunar eclipses, and so on."
+          ]
+        },
+        {
+          "title": "Ancient Egyptian Hieroglyphic Numerals",
+          "texts": [
+            "<b>Symbols and Meanings:</b> The ancient Egyptians used different graphic symbols to represent different numbers. For example, a vertical line '|' represented 1, a horseshoe-shaped symbol '∩' represented 10, a lotus pattern '𓆑' represented 100, a curved finger '𓇋' represented 1000, a tadpole '𓆉' represented 10000, a man with his arms raised '𓅱' represented 100000, and so on.",
+            "<b>Application Scenarios:</b> Ancient Egyptian hieroglyphic numerals were mainly used to record economic activities, such as recording the areas of land, the harvests of grains, the amounts of taxes, and so on. In construction projects, they were also used to record the quantities of building materials and the working hours of laborers."
+          ]
+        },
+        {
+          "title": "Ancient Babylonian Cuneiform Numerals",
+          "texts": [
+            "<b>Writing Method and Numerical Representation:</b> The ancient Babylonians used cuneiform script to write numbers and expressed values through specific combinations of cuneiform notches. This number system was sexagesimal. Basic symbols could represent different numbers through different combinations. For example, a small cuneiform symbol might represent 1, two small cuneiform symbols placed side by side represented 2, and some complex combinations could represent larger numbers.",
+            "<b>Application Scenarios:</b> In the commercial trade of ancient Babylon, cuneiform numerals were used to record the prices of goods, the quantities of transactions, and so on. In the astronomical field, the ancient Babylonians used cuneiform numerals to record astronomical observation data. They made detailed records and calculations of the orbital periods of celestial bodies, the positions of constellations, and so on. These records provided important references for the development of astronomy later."
+          ]
+        }
+      ]
+    },
+    "history": {
+      "title": "Numbers: The Evolution from Ancient Origins to Entertaining Games",
+      "descriptions": [
+        "Numbers, as an extremely important element in the development of human civilization, have a history like a vast and long scroll, carrying countless wisdom and cultural deposits.",
+        "In ancient times, humans began to explore the concept of quantity. Initially, people might just use simple objects to correspond to the quantity of items. For example, they used small stones to represent the number of prey or branches to record the number of days. This extremely primitive counting method was the hazy beginning of the concept of numbers.",
+        "As early as in the oracle bone inscriptions of the Yin and Shang Dynasties in China, the embryonic form of numbers had already emerged. At that time, the writing of numbers was relatively simple and intuitive. There were corresponding symbols for numbers from one to ten. Most of these symbols reflected the size of the numbers by the number of engraved lines. For example, 'one' was represented by one horizontal line, and 'two' was represented by two horizontal lines, and so on. As time went by, during the Spring and Autumn Period and the Warring States Period, the counting rod method was widely used. Counting rods were small sticks of the same length, and different combinations of their vertical and horizontal arrangements were used to represent different numbers. This counting method played a crucial role in many fields such as commercial trade, astronomical calendar calculation, and engineering construction at that time, laying a solid foundation for the development of ancient Chinese mathematics.",
+        "The ancient Egyptians created hieroglyphic numbers. They used different graphic symbols to represent different numbers. For example, a vertical line represented '1', a horseshoe-shaped symbol represented '10', and a lotus pattern represented '100', and so on. These hieroglyphic numbers were vivid, but they were rather cumbersome when writing and calculating complex quantities. The ancient Babylonians adopted cuneiform numbers, using specific combinations of cuneiform notches to express values. This number system played an important role in fields such as commercial and astronomical calculations at that time.",
+        "In India, a significant breakthrough in the development of numbers occurred. The Indians invented a set of number symbols including '0'. These numbers were concise and had a strong systematic nature. Later, through the spread by the Arabs, they were accepted and widely used by Europeans, and finally became the Arabic numerals that are now commonly used all over the world. Arabic numerals, with their advantages of being simple, clear, easy to write and calculate, have completely changed the way of mathematical operations and records in the world.",
+        "Besides the above common ways of writing numbers, Roman numerals also occupied an important position in European history. Roman numerals use combinations of letters. For example, 'I' represents '1', 'V' represents '5', 'X' represents '10', 'L' represents '50', and so on. Different numbers are represented through specific addition and subtraction rules. For example, 'IV' represents '4', and 'IX' represents '9'. Roman numerals are still used in aspects such as architecture and clock scales today, and their unique writing forms demonstrate the charm of ancient European culture.",
+        "With the continuous development and popularization of numbers, games based on numbers have emerged and flourished. Sudoku is a classic among number games. In a 9×9 Sudoku grid, based on the known numbers, players need to use logical reasoning and the method of elimination to fill the nine numbers from 1 to 9 into each small 3×3 grid as well as each row and each column without repetition. Sudoku not only tests players' patience but also greatly exercises the logical thinking ability of the brain. Both children and adults can find fun and challenges in it.",
+        "There are also a wide variety of number puzzle games. Some games will give a series of number sequences, and players need to find the patterns among them to infer the next number or the missing numbers. Such games can stimulate players' keen insight into number patterns and cultivate their mathematical intuition. There is also the number sequence game, where players need to connect numbers according to specific rules, such as the difference or multiple relationship between adjacent numbers. This requires players to have a clear understanding of the order and relationship of numbers.",
+        "In addition, there are number coloring games. Using numbers as indexes corresponding to different color areas, players complete beautiful patterns during the coloring process. This kind of game combines numbers with artistic creation, which is quite interesting. In the field of video games, in role-playing games with numbers as the core element, players need to pay attention to various numerical attributes of characters, such as health points, magic points, attack power, defense power and other numerical indicators, and improve these numbers by leveling up, obtaining equipment and other means, so as to embark on a wonderful adventure journey in the game world.",
+        "From the simple counting in ancient times to the rich and diverse number games nowadays, numbers have been constantly evolving and innovating in the long river of human civilization. They have not only witnessed the development of human wisdom but also brought endless fun and challenges to people's lives."
+      ]
+    },
+    "singleNum": {
+      "title": "Single number",
+      "text": "数字12是一款集合了多种数字游戏的游戏，包括数独、猜数字、滑动吧数字、数字华容道、2048等。"
+    },
+    "numGames": {
+      "title": "Number games",
+      "text": "数字12是一款集合了多种数字游戏的游戏，包括数独、猜数字、滑动吧数字、数字华容道、2048等。"
+    }
+  },
+  "gameOver": {
+    "gameOver": "Game over!",
+    "timesOver": "There are no more moves!",
+    "winWin": "Congratulations! Win!"
+  },
+  "sudoku": {
+    "name": "Sudoku",
+    "helpGoalTitle": "Goal",
+    "helpGoalText": "Fill in a 9×9 grid with digits so that each column, row, and 3×3 section contain the numbers between 1 to 9.",
+    "helpPlayTitle": "Play",
+    "helpPlayText": "In a new game start, the 9×9 grid will have some of the squares filled in. You can use logic to fill in the missing digits and complete the grid.",
+    "helpLiTitle": "Don’t forget, error if bellow:",
+    "helpLi1": "Any row contains more than one of the same number.",
+    "helpLi2": "Any column contains more than one of the same number.",
+    "helpLi3": "Any 3×3 grid contains more than one of the same number."
+  },
+  "guess": {
+    "name": "Number Guess",
+    "gameover": {
+      "youWin": "You win! Congratulations!",
+      "youLose": "You lose! Sorry!",
+      "useStep": "The number of times used: ",
+      "answerIs": "The answer is: ",
+      "correctAnswerIs": "The correct answer is: ",
+      "yourAnswerIs": "Your answer is: ",
+      "gotCup": "Got the cup: ",
+      "keepTry": "Keep trying! Hope to see you again!"
+    },
+    "helpText1": "You need to guess 4 different numbers.",
+    "helpText2": "Game will random 4 numbers.",
+    "helpText3": "For example 5678. If you guess 0128, you can get 1A0B. If you guess 5627, you can get 2A1B",
+    "helpText4": "Every game has 8 times to guess.",
+    "helpText5": "Less times guessed right, more cups got."
+  },
+  "slide": {
+    "name": "Slide",
+    "helpText1": "You can use a finger swipe to look for more than three pieces of digital color that are connected together and erase it."
+  },
+  "nPuzzle": {
+    "nameB": "N-Puzzle"
+  },
+  "2048": {
+    "nameB": "2048"
+  },
+  "cups": {
+    "name": "Cups",
+    "allCups": "All cups",
+    "gameCups": "Game cups",
+    "total": "Total",
+    "quantityAvailableCup": "Quantity available cups"
+  },
+  "settings": {
+    "name": "Settings",
+    "onlyGame": "Only show game."
+  },
+  "more": {
+    "name": "More",
+    "about": {
+      "title": "About",
+      "version": "Version: ",
+      "author": "Author: Bob Liu (Bob Game)",
+      "desc1": "This is my own practice coding work, all free, no paid content, I hope players like to play."
+    }
+  },
+  "dialog": {
+    "lang": {
+      "title": "Language",
+      "desc": "Please choose your language and apply it."
+    }
+  }
+}
