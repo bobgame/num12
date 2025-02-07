@@ -1,14 +1,26 @@
 <nm-ui-dialog (clickClose)="close()" [title]="'more.about.title' | translate">
   <div class="dialog-content-about">
     <div class="about-body">
-      <p>{{'more.about.version' | translate}}{{ appConfig.version }}</p>
-      <p>{{'more.about.author' | translate}}</p>
-      <p>{{'more.about.desc1' | translate}}</p>
+      <p>{{ "more.about.version" | translate }}{{ appConfig.version }}</p>
+      <p>{{ "more.about.author" | translate }}</p>
+      <p>
+        {{ "more.about.email" | translate
+        }}<a href="mailto:bobgame@vip.qq.com" target="_blank">{{
+          "bobgame@vip.qq.com"
+        }}</a>
+      </p>
+      <p>
+        {{ "more.about.github" | translate
+        }}<a href="https://github.com/bobgame/num12" target="_blank"
+          >bobgame/num12</a
+        >
+      </p>
+      <p>{{ "more.about.desc1" | translate }}</p>
     </div>
   </div>
   <footer>
     <div class="button-con">
-      <button (click)="close()">{{'common.close' | translate}}</button>
+      <button (click)="close()">{{ "common.close" | translate }}</button>
     </div>
   </footer>
 </nm-ui-dialog>

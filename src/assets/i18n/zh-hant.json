@@ -180,6 +180,8 @@
       "title": "關於遊戲",
       "version": "版本號：",
       "author": "作者：Bob Liu (Bob Game)",
+      "email": "郵箱：",
+      "github": "Github: ",
       "desc1": "這個是我自己練習寫代碼的作品，全免費，無付費內容，希望玩家喜歡玩。"
     }
   },
