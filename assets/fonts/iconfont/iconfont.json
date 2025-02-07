@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "15188382",
+      "name": "github",
+      "font_class": "github",
+      "unicode": "e6ea",
+      "unicode_decimal": 59114
+    },
+    {
       "icon_id": "18057494",
       "name": "More",
       "font_class": "more",

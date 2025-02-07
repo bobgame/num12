@@ -180,6 +180,8 @@
       "title": "About",
       "version": "Version: ",
       "author": "Author: Bob Liu (Bob Game)",
+      "email": "Email: ",
+      "github": "Github: ",
       "desc1": "This is my own practice coding work, all free, no paid content, I hope players like to play."
     }
   },

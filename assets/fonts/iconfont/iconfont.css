@@ -1,8 +1,8 @@
 @font-face {
   font-family: "nwicon"; /* Project id 1043435 */
-  src: url('iconfont.woff2?t=1734240620441') format('woff2'),
-       url('iconfont.woff?t=1734240620441') format('woff'),
-       url('iconfont.ttf?t=1734240620441') format('truetype');
+  src: url('iconfont.woff2?t=1738907452823') format('woff2'),
+       url('iconfont.woff?t=1738907452823') format('woff'),
+       url('iconfont.ttf?t=1738907452823') format('truetype');
 }
 
 .nwicon {
@@ -11,6 +11,10 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.nwi-github:before {
+  content: "\e6ea";
 }
 
 .nwi-more:before {
