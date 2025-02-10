@@ -1,27 +1,32 @@
-# Num12
+# num12
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.11.
+Number & Words games all in one
 
-## Development server
+[English](README.md) | [简体中文](README_cn.md)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4600/`. The application will automatically reload if you change any of the source files.
+## Project Overview
 
-## Code scaffolding
+`num12` is a project that contains number and word games, providing rich features and experiences.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Project Features
 
-## Build
+- **Number slider**: A slider game that requires players to slide the number from left to right.
+- **Number puzzle**: A puzzle game that requires players to rearrange the numbers in the correct order.
+- **2048**: A classic 2048 game that requires players to merge the numbers to reach 2048.
+- **Number guessing**: A guessing game that requires players to guess the number within a certain range.
+- **Sudoku**: A classic Sudoku game that requires players to fill in the numbers in the correct order.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Project Information
 
-## Running unit tests
+- **Name**: num12
+- **Author**: BobGame
+- **Homepage**: [http://num12.com/](http://num12.com/) | [https://bobgame.github.io/num12/](https://bobgame.github.io/num12/)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Script Commands
 
-## Running end-to-end tests
+The project provides a series of convenient script commands to help you develop, build, and test:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+| Command       | Description                                                         |
+|------------|--------------------------------------------------------------|
+| `npm run build` | Build for the production environment using `ng build -c=production`.           |
+| `npm run start` | Start the development server on port 4600 using `ng serve --port=4600`.    |
